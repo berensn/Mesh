@@ -1,0 +1,66 @@
+@import '../../mixins.scss';
+
+hr{
+    width: 70%;
+    height: 1px;
+    background-color: $red;
+    border: 1px solid $red;
+}
+
+#plexusLayout{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.visualArts{    
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.writersBloc{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cardCat{
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 2.3em;
+    font-weight: 800;
+    margin: 10px;
+    color: $titleColor;
+}
+
+.card{
+    position: relative;
+    border-radius: 10px 0px;
+    border: 2px solid $cardBorder;
+    padding: 10px;
+    width: 25%;
+    float: left;
+    background-color: $cardBgColor;
+    margin-top: 10px;        
+}
+
+.cardTitle{
+    @include titleFont();
+}
+
+.cardLink{
+    @include linkFont();
+}
+
+.cardDesc{
+    @include descFont();
+}

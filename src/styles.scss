@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'mixins.scss';
+
+::selection{
+    color: $red;
+    background-color: rgba(0,0,0,0);
+}
+
+html{
+    padding: 0px;
+}
+
+body{
+    height: 90vh;
+    margin: 0px;
+    background-image: url('assets/img/cosmic_bg_1920xsmall.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: $bgColor;
+    font-size: 16px;
+}
+
+ul{
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.cdk-overlay-pane{
+    max-width: 90vw !important;
+}
+
+.mat-dialog-container{
+    background: $articleBG;
+    border: 10px solid $red;
+    padding: 25px 0px 10px 0px !important;
+}
+
+
+.header{
+    font-size: 2.5em;
+    font-weight: 600;
+    color: $titleColor;
+}

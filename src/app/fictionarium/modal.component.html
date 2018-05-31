@@ -1,0 +1,13 @@
+<div *ngIf="data">
+    <span class="aTitle">{{ data.title }}</span><br/>
+    <span class="aDate">{{ data.date | date:'fullDate' }}</span><br/>
+    <div id="modalContent" [paginator]= "data.content"></div>
+</div>
+<ng-container *ngIf= "totalPages != 1">
+<div class="paginate">
+    <ul id="pagination" >
+        <li *ngFor= "let page of pageList" (click)= "jumpToPage(page)">{{ page }}</li>
+    </ul>
+    Page {{currentPage }} of {{ pageJumper.length }}
+</div>
+</ng-container>

@@ -1,0 +1,11 @@
+<div class= 'fictionarium'>
+    <div><span class="cardCat">Fictionarium</span></div>
+    <ul class = 'article'>
+        <li *ngFor = "let jsonArticle of jsonArticles"
+            (click)="onSelect(jsonArticle)">
+            <span class = 'title'>{{ jsonArticle.title }}</span><br/>
+            <span class="date">{{ jsonArticle.publishDate | date:'fullDate'}}</span><br/><br/>
+            <div class= "introBit" [innerHTML] = "introArticle(jsonArticle.content)"></div>
+        </li>
+    </ul>
+</div>

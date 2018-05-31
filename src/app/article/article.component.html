@@ -1,0 +1,19 @@
+<div id="article">
+    <ng-container *ngFor = "let jsonArticle of jsonArticles; let index = index">
+        <ng-container *ngIf = "index == 0">
+            <span class="aTitle">{{ jsonArticle.title }}</span><br/>
+            <span class ="aDate">{{ jsonArticle.publishDate | date:'fullDate' }}</span><br/>
+ 
+                <div id= "pageContent"  [paginator]= "jsonArticle.content"></div>
+     
+        </ng-container>
+    </ng-container>
+    <ng-container *ngIf= "totalPages != 1">
+    <div class="paginate">
+        <ul id="pagination" >
+            <li *ngFor= "let page of pageList" (click)= "jumpToPage(page)">{{ page }}</li>
+        </ul>
+        Page {{ currentPage }} of {{ pageJumper.length }}
+    </div>
+    </ng-container>
+</div>

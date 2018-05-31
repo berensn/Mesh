@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "author": "Nathaniel Berens",
+        "title": "Good News Everyone!",
+        "content": "We have a delivery for the deadly bog planet!",
+        "tags": ["Good News", "deadly"],
+        "categories": ["Futurama"],
+        "publishDate": "2018-05-12T08:15:00.000-05:00",
+        "published": true
+    }  
+]

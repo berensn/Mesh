@@ -1,0 +1,11 @@
+<div class= 'infocast'>
+    <div><span class="cardCat">Infocast</span></div>
+    <ul class = 'info'>
+        <li *ngFor = "let jsonInfocast of jsonInfocasts"
+            (click)="onSelect(jsonInfocast)">
+            <span class = 'title'>{{ jsonInfocast.title }}</span><br/>
+            <span class="date">{{ jsonInfocast.publishDate | date:'fullDate'}}</span><br/><br/>
+            <div class="introBit">{{ jsonInfocast.content }}</div>
+        </li>
+    </ul>
+</div>

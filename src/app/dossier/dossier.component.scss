@@ -1,0 +1,35 @@
+@import '../../mixins.scss';
+
+#dossierLayout{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.dossier{    
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dossierInner{    
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardCat{
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 2.3em;
+    font-weight: 800;
+    margin: 10px;
+    color: $titleColor;
+}
