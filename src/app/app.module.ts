@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ArticleComponent } from './article/article.component';
 import { DossierComponent } from './dossier/dossier.component';
-import { FancyEffects } from './fancy.effects';
+//import { FancyEffects } from './fancy.effects';
 import { FictionariumComponent, ModalComponentDialog } from './fictionarium/fictionarium.component';
 import { Globals } from './globals';
 import { InfocastComponent } from './infocast/infocast.component';
@@ -75,7 +75,7 @@ import {
     HttpClientModule,
     MatDialogModule
   ],
-  providers: [FancyEffects, Globals, JsonService, TransferService],
+  providers: [ Globals, JsonService, TransferService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
