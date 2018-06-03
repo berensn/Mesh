@@ -1,7 +1,6 @@
 // Class used for javascript effects on background and navigation
 import { Globals } from './globals';
 import * as PIXI from 'pixi.js';
-import * as distortion from '../assets/js/bg.displacement_adv.js';
 
 export class FancyEffects{
   constructor(private _g: Globals){}
