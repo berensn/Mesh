@@ -14,7 +14,7 @@ var bounds = new PIXI.Rectangle(
     app.screen.height + padding * 2
 );
 
-var displacementSprite = PIXI.Sprite.fromImage('required/assets/displace.png');
+var displacementSprite = PIXI.Sprite.fromImage('../img/clouds.jpg');
 var displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
 
 app.stage.addChild(displacementSprite);

@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ArticleComponent } from './article/article.component';
 import { DossierComponent } from './dossier/dossier.component';
+import { FancyEffects } from './fancy.effects';
 import { FictionariumComponent, ModalComponentDialog } from './fictionarium/fictionarium.component';
 import { Globals } from './globals';
 import { InfocastComponent } from './infocast/infocast.component';
 import { JsonService } from './json.service';
 import { Paginator } from './paginator';
 import { PlexusComponent } from './plexus/plexus.component';
+import * as PIXI from 'pixi.js';
 import { TransferService } from './transfer.service';
 import {
   MatAutocompleteModule,
@@ -73,7 +75,7 @@ import {
     HttpClientModule,
     MatDialogModule
   ],
-  providers: [Globals, JsonService, TransferService],
+  providers: [FancyEffects, Globals, JsonService, TransferService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

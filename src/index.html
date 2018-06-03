@@ -11,5 +11,20 @@
 <body>
   <app-root></app-root>
 </body>
-<script src='assets/js/bg.displacement.js'></script>
+
+<script src='assets/js/bg.displacement_adv.js'></script>
+<script src='assets/js/nav.effect.js'></script>
+<script>
+    var initCanvasSlideshow = new CanvasSlideshow({
+        displacementImage: 'img/dmaps/512x512/clouds.jpg',
+        autoPlay: true,
+        autoPlaySpeed: [0.3, 0.3],
+        displaceScale: [800, 500],
+        displaceAutoFit: true,
+        displacementCenter: true,
+        interactive: true,
+        interactionEvent: 'click', // 'click', 'hover', 'both' 
+    });
+</script>
+
 </html>
