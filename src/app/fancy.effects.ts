@@ -1,3 +1,4 @@
+/*
 // Class used for javascript effects on background and navigation
 import { Globals } from './globals';
 import * as PIXI from 'pixi.js';
@@ -241,4 +242,4 @@ export class FancyEffects{
       };
     })(); 
   }
-}
+}*/
