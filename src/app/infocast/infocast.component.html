@@ -5,7 +5,7 @@
             (click)="onSelect(jsonInfocast)">
             <span class = 'title'>{{ jsonInfocast.title }}</span><br/>
             <span class="date">{{ jsonInfocast.publishDate | date:'fullDate'}}</span><br/><br/>
-            <div class="introBit">{{ jsonInfocast.content }}</div>
+            <div class="introBit" [innerHTML] = "jsonInfocast.content"></div>
         </li>
     </ul>
 </div>
