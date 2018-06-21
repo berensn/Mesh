@@ -8,7 +8,7 @@
      
         </ng-container>
     </ng-container>
-    <ng-container *ngIf= "totalPages != 1">
+    <ng-container *ngIf= "pageList.length != 1">
     <div class="paginate">
         <ul id="pagination" >
             <li *ngFor= "let page of pageList" (click)= "jumpToPage(page)">{{ page }}</li>
