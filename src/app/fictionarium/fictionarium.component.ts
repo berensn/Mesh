@@ -3,13 +3,13 @@
   the first 100 words. When selected, a modal appears with the selected article displayed in it.
 */
 
-import { Component, OnInit, Input, Inject, ElementRef, ChangeDetectorRef } from '@angular/core';
-import { Globals } from '../globals';
-import { JsonFormat } from '../json.format';
-import { JsonService } from '../json.service';
+import { Component, OnInit, Inject, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Globals } from '../helpers/globals';
+import { JsonFormat } from '../helpers/json.format';
+import { JsonService } from '../helpers/json.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { TransferService } from '../transfer.service';
-import { Paginator } from '../paginator';
+import { TransferService } from '../helpers/transfer.service';
+import { Paginator } from '../helpers/paginator';
 
 @Component({
   selector: 'app-fictionarium',

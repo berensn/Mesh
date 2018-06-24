@@ -2,11 +2,11 @@
   Retrieves article list from articles.json and displays the first one
 */
 
-import { Component, OnInit, Input, ChangeDetectorRef, ElementRef } from '@angular/core';
-import { Globals } from '../globals';
-import { JsonService } from '../json.service';
-import { Paginator } from '../paginator';
-import { TransferService } from '../transfer.service';
+import { Component, OnInit, ChangeDetectorRef, ElementRef } from '@angular/core';
+import { Globals } from '../helpers/globals';
+import { JsonService } from '../helpers/json.service';
+import { Paginator } from '../helpers/paginator';
+import { TransferService } from '../helpers/transfer.service';
 
 @Component({
   selector: 'app-article',

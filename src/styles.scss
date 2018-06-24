@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import 'mixins.scss';
+@import './assets/css/mixins.scss';
 
 ::selection{
     color: $red;
@@ -14,7 +14,7 @@ html{
 body{
     height: 90vh;
     margin: 0px;
-    background-image: url('assets/img/cosmic_bg_1920xsmall.jpg');
+    background-image: url('assets/img/bg_05.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
     background-color: $bgColor;

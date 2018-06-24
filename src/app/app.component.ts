@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import * as PIXI from 'pixi.js';
 
 @Component({
   selector: 'app-root',

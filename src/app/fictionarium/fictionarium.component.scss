@@ -1,6 +1,9 @@
-@import '../../mixins.scss';
+@import '../../assets/css/mixins.scss';
 
 li{
+    &:hover{
+        border-color: $red;
+    }
     display: inline;
     position: relative;
     border-radius: 10px 0px;
@@ -17,7 +20,8 @@ li{
     margin: auto;
     padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around;    
+    @include pageBg();
 }
 
 .introBit{  
