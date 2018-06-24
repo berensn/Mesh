@@ -98,7 +98,8 @@ import { TransferService } from './transfer.service';
       this.avgPageSize = Math.floor(this.contentLen / this.numPages); 
       this.subEnd = this.avgPageSize;
       this.whitespace();
-      contentBox.nativeElement.innerHTML = this.content.substring(this.subStart, this.subEnd).trim();
+      contentBox.nativeElement.innerHTML = this.content.substring(this.subStart, this.subEnd).trim();      
+      this.render.addClass(contentBox.nativeElement, 'firstLetter');
 
       // Set up Pagination
       for (let i = 1; i <= this.numPages; i++){

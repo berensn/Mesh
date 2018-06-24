@@ -23,6 +23,12 @@ body{
 
 ul{
     margin: 0px;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+    cursor: pointer;
 }
 
 a{

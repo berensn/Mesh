@@ -3,7 +3,7 @@
   the first 100 words. When selected, a modal appears with the selected article displayed in it.
 */
 
-import { Component, OnInit, Inject, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Inject, ElementRef, ChangeDetectorRef, Renderer2 } from '@angular/core';
 import { Globals } from '../helpers/globals';
 import { JsonFormat } from '../helpers/json.format';
 import { JsonService } from '../helpers/json.service';
@@ -75,7 +75,7 @@ export class ModalComponentDialog {
   private pageList: any[] = [];         // Array containing the list of page numbers [First, Prev, 1, 2, ...]
 
   // Constructors
-  constructor( private _g: Globals, public dialogRef: MatDialogRef<ModalComponentDialog>, @Inject(MAT_DIALOG_DATA) public data: any, public ts: TransferService, private cdr: ChangeDetectorRef) { }
+  constructor( private _g: Globals, public dialogRef: MatDialogRef<ModalComponentDialog>, @Inject(MAT_DIALOG_DATA) public data: any, public ts: TransferService, private cdr: ChangeDetectorRef, private render: Renderer2) { }
 
   // Formatting and on/off values for console.log
   loc = this._g.loc;        // Location color
@@ -100,6 +100,11 @@ export class ModalComponentDialog {
       this.content.substring(
         this.pageJumper[this.currentPage - 1]['subStart'],
         this.pageJumper[this.currentPage - 1]['subEnd']).trim();
+    if (this.currentPage == 1){
+      this.render.addClass(this.contentBox.nativeElement, 'firstLetter');
+    }else{
+      this.render.removeClass(this.contentBox.nativeElement, 'firstLetter');
+    }
 
     // Logging
     if (this.log) console.log('%c[fictionarium.component.ts][jumpToPage()] %ccurrentPage: %c%s', this.loc, this.item, this.val, this.currentPage);

@@ -2,7 +2,7 @@
   Retrieves article list from articles.json and displays the first one
 */
 
-import { Component, OnInit, ChangeDetectorRef, ElementRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ElementRef, Renderer2 } from '@angular/core';
 import { Globals } from '../helpers/globals';
 import { JsonService } from '../helpers/json.service';
 import { Paginator } from '../helpers/paginator';
@@ -25,7 +25,7 @@ export class ArticleComponent implements OnInit {
   private _jsonUrl: string = "../assets/data/articles.json";    // Url of articles.json file
 
   // Consturctors
-  constructor(private _g: Globals, private jsonService: JsonService, public ts: TransferService, private cdr: ChangeDetectorRef) { }
+  constructor(private _g: Globals, private jsonService: JsonService, public ts: TransferService, private cdr: ChangeDetectorRef, private render: Renderer2) { }
   
   // Formatting and on/off values for console.log
   loc = this._g.loc;        // Location color
@@ -63,6 +63,11 @@ export class ArticleComponent implements OnInit {
       this.content.substring(
         this.pageJumper[this.currentPage - 1]['subStart'],
         this.pageJumper[this.currentPage - 1]['subEnd']).trim();
+    if (this.currentPage == 1){
+      this.render.addClass(this.contentBox.nativeElement, 'firstLetter');
+    }else{
+      this.render.removeClass(this.contentBox.nativeElement, 'firstLetter');
+    }
 
     // Logging
     if (this.log) console.log('%c[article.component.ts][jumpToPage()] %ccurrentPage: %c%s', this.loc, this.val, this.val, this.currentPage);
