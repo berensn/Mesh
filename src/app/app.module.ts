@@ -15,7 +15,6 @@ import { InfocastComponent } from './infocast/infocast.component';
 import { JsonService } from './helpers/json.service';
 import { Paginator } from './helpers/paginator';
 import { PlexusComponent } from './plexus/plexus.component';
-import * as PIXI from 'pixi.js';
 import { TransferService } from './helpers/transfer.service';
 import {
   MatAutocompleteModule,
@@ -36,7 +35,7 @@ import {
   MatNativeDateModule,
   MatPaginatorModule,
   MatProgressBarModule,
-  MatProgressSpinnerModule,
+  MatProgressSpinnerModule, 
   MatRadioModule,
   MatRippleModule,
   MatSelectModule,

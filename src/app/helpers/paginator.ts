@@ -16,6 +16,7 @@ import {
 } from '@angular/core';
 import { Globals } from './globals';
 import { TransferService } from './transfer.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Directive({
   selector: '[paginator]'
@@ -56,7 +57,13 @@ import { TransferService } from './transfer.service';
       }    
     
     // Constructors
-    constructor(private el: ElementRef, private _g: Globals, private render: Renderer2,  private ts: TransferService){}
+    constructor(
+      private el: ElementRef, 
+      private _g: Globals, 
+      private render: Renderer2,  
+      private ts: TransferService,
+      private sanitize: DomSanitizer
+    ){}
 
     // Formatting and on/off values for console.log
     loc = this._g.loc;        // Location color
@@ -98,7 +105,7 @@ import { TransferService } from './transfer.service';
       this.avgPageSize = Math.floor(this.contentLen / this.numPages); 
       this.subEnd = this.avgPageSize;
       this.whitespace();
-      contentBox.nativeElement.innerHTML = this.content.substring(this.subStart, this.subEnd).trim();      
+      this.contentBox.nativeElement.innerHTML = this.content.substring(this.subStart, this.subEnd).trim();
       this.render.addClass(contentBox.nativeElement, 'firstLetter');
 
       // Set up Pagination

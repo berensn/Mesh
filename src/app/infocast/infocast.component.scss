@@ -19,6 +19,8 @@ li{
     padding: 10px;
     display: flex;
     justify-content: space-around;
+    align-items: flex-start;
+    @include pageBg();
 }
 
 .introBit{
@@ -39,7 +41,6 @@ li{
 
 .info{
     width: 90%;
-    margin: auto;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;

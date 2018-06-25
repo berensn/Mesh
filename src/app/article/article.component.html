@@ -4,7 +4,7 @@
             <span class="aTitle">{{ jsonArticle.title }}</span><br/>
             <span class ="aDate">{{ jsonArticle.publishDate | date:'fullDate' }}</span><br/>
  
-                <div id= "pageContent" #articleContent [paginator]= "jsonArticle.content"></div>
+                <div id= "pageContent" [paginator]= "jsonArticle.content"></div>
      
         </ng-container>
     </ng-container>

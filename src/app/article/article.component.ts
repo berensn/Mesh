@@ -7,6 +7,7 @@ import { Globals } from '../helpers/globals';
 import { JsonService } from '../helpers/json.service';
 import { Paginator } from '../helpers/paginator';
 import { TransferService } from '../helpers/transfer.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-article',
@@ -25,7 +26,14 @@ export class ArticleComponent implements OnInit {
   private _jsonUrl: string = "../assets/data/articles.json";    // Url of articles.json file
 
   // Consturctors
-  constructor(private _g: Globals, private jsonService: JsonService, public ts: TransferService, private cdr: ChangeDetectorRef, private render: Renderer2) { }
+  constructor(
+    private _g: Globals, 
+    private jsonService: JsonService, 
+    public ts: TransferService, 
+    private cdr: ChangeDetectorRef, 
+    private render: Renderer2,
+    private sanitize: DomSanitizer
+  ) { }
   
   // Formatting and on/off values for console.log
   loc = this._g.loc;        // Location color
