@@ -1,35 +1,23 @@
 @import '../../assets/css/mixins.scss';
 
-#dossierLayout{
-    width: 90%;
-    margin: auto;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.cardCat{    
+    @include pageTitle;
 }
 
-.dossier{    
-    width: 60%;
-    margin: auto;
-    padding: 10px;
+.dossier{   
     display: flex;
     justify-content: space-around;
+    margin: auto;
+    padding: 10px;
+    width: 60%;
 }
 
 .dossierInner{    
-    width: 90%;
+    @include flexLayout;    
     margin: auto;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
 }
 
-.cardCat{
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: 2.3em;
-    font-weight: 800;
-    margin: 10px;
-    color: $titleColor;
+#dossierLayout{
+    @include flexLayout;
+    margin: auto;
 }

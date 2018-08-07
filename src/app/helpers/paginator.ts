@@ -10,31 +10,29 @@ import {
   AfterViewInit,
   Directive,
   ElementRef,
-  Input,
   HostListener,
+  Input,  
   Renderer2
 } from '@angular/core';
 import { Globals } from './globals';
 import { TransferService } from './transfer.service';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Directive({
   selector: '[paginator]'
 })
 
   export class Paginator implements AfterViewInit{
-
+    avgPageSize = 0;          // Avg char length of a page, used to create equal sized pages    
     content = '';             // Article as string from JSON file 
     contentBox = undefined;   // HTML element to place contnet in
+    contentHeight = 0;        // Sets content container height
     contentLen = 0;           // Length of content
+    maxPage = 0;              // the biggest page, used to set page height
+    numPages = 0;             // Number of pages base on contentLen and pageLen
     pageJump = [];            // Array holding number of pages, char start and char end points for each page
     pageLen = 0;              // Character length of each page
-    numPages = 0;             // Number of pages base on contentLen and pageLen
     subStart = 0;             // Char position of each page start
     subEnd = 0;               // Char position of each page end
-    avgPageSize = 0;          // Avg char length of a page, used to create equal sized pages
-    maxPage = 0;              // the biggest page, used to set page height
-    contentHeight = 0;        // Sets content container height
 
     @Input() paginator;       // Gets input from HTML template via paginator selector
     
@@ -42,17 +40,17 @@ import { DomSanitizer } from '@angular/platform-browser';
     @HostListener('window:resize') 
       onResize() {
         // Reset appropriate vars
+        this.avgPageSize = 0;
         this.content = '';
         this.contentBox = undefined;
-        this.contentLen = 0;
-        this.pageJump = [];
-        this.pageLen = 0;
-        this.numPages = 0;    
-        this.subStart = 0;
-        this.subEnd = 0; 
-        this.avgPageSize = 0;
-        this.maxPage = 0;
         this.contentHeight = 0;
+        this.contentLen = 0;
+        this.maxPage = 0;
+        this.numPages = 0; 
+        this.pageJump = [];
+        this.pageLen = 0; 
+        this.subEnd = 0;   
+        this.subStart = 0;
         this.pageContent(this.el, this.paginator);  
       }    
     
@@ -62,14 +60,13 @@ import { DomSanitizer } from '@angular/platform-browser';
       private _g: Globals, 
       private render: Renderer2,  
       private ts: TransferService,
-      private sanitize: DomSanitizer
     ){}
 
     // Formatting and on/off values for console.log
-    loc = this._g.loc;        // Location color
     item = this._g.item;      // Item color
-    val = this._g.val;        // Value color
+    loc = this._g.loc;        // Location color
     log = this._g.log;        // Logging on/off 
+    val = this._g.val;        // Value color
 
     ngAfterViewInit(){   
       if (this.log) console.log('%c[paginator.ts][ngAfterViewInit()] %cMessage: %cIN ', this.loc, this.item, this.val);

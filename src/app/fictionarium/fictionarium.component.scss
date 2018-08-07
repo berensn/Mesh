@@ -1,59 +1,49 @@
 @import '../../assets/css/mixins.scss';
 
 li{
+    background-color: $cardBgColor;
+    border: 2px solid $border;
+    border-radius: 10px 0px;
+    display: inline;
+    float: left;
+    margin-top: 10px;
+    padding: 10px;
+    position: relative;   
+    width: 20%;
     &:hover{
         border-color: $red;
-    }
-    display: inline;
-    position: relative;
-    border-radius: 10px 0px;
-    padding: 10px;
-    width: 20%;
-    float: left;
-    background-color: $cardBgColor;
-    border: 2px solid $cardBorder;
-    margin-top: 10px;   
+    }    
+}
+
+.article{
+    @include flexLayout;
+    flex-wrap: wrap;
+}
+
+.cardCat{
+    @include pageTitle;
+}
+
+.date{
+    color: $textColor;
+    float:left;
+    font-weight: 600;    
 }
 
 .fictionarium{
-    width: 90%;
+    @include flexLayout; 
+    @include pageBg();  
     margin: auto;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;    
-    @include pageBg();
+
 }
 
 .introBit{  
-    @include firstLetter();
-    @include descFont();
+    @include textFont();
+    @include firstLetter();    
 }
 
 .title{
     @include titleFont();
     float: left;
     line-height: .9em;
-}
-
-.date{
-    color: $descColor;
-    font-weight: 600;
-    float:left;
-}
-
-.article{
-    width: 90%;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.cardCat{
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: 2.3em;
-    font-weight: 800;
-    margin: 10px;
-    color: $titleColor;
 }

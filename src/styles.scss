@@ -7,8 +7,10 @@
     background-color: rgba(0,0,0,0);
 }
 
-html{
-    padding: 0px;
+
+a{
+    text-decoration: none;
+    color: $firstLetter;
 }
 
 body{
@@ -21,9 +23,8 @@ body{
     font-size: 16px;
 }
 
-ul{
-    margin: 0px;
-    text-decoration: none;
+html{
+    padding: 0px;
 }
 
 li{
@@ -31,13 +32,19 @@ li{
     cursor: pointer;
 }
 
-a{
+ul{
+    margin: 0px;
     text-decoration: none;
-    color: $firstLetter;
 }
 
 .cdk-overlay-pane{
     max-width: 90vw !important;
+}
+
+.header{
+    font-size: 2.5em;
+    font-weight: 600;
+    color: $titleColor;
 }
 
 .mat-dialog-container{
@@ -47,8 +54,3 @@ a{
 }
 
 
-.header{
-    font-size: 2.5em;
-    font-weight: 600;
-    color: $titleColor;
-}

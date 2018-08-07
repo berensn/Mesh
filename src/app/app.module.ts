@@ -50,6 +50,7 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import {
     InfocastComponent,    
     ModalComponentDialog,
     Paginator,    
-    PlexusComponent
+    PlexusComponent, NavComponent
   ],
   entryComponents: [
     ModalComponentDialog

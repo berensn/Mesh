@@ -1,48 +1,67 @@
 @import 'variables.scss';
 
-@mixin titleFont(){
+@mixin aDate(){
+    float: left;
+    font-weight: 600;
+    margin-left: 30px;    
+}
+
+@mixin aTitle(){
+    color: $firstLetter;
+    float: left;
     font-size: 1.3em;
     font-weight: 800;
+    line-height: .8em;
+    margin: 0px 0px 0px 30px;
+    text-shadow: 0px 0px 1px #000;
+}
+
+@mixin pageTitle(){
     color: $titleColor;
+    font-size: 2.3em;
+    font-weight: 800;
+    margin: 10px;
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+}
+
+@mixin firstLetter(){
+    &:first-letter {
+        color: $firstLetter;
+        font-size: 1.2em;
+        font-weight: bold;
+        padding-right: 1px;
+        text-shadow: 0px 0px 1px #000;
+    }
+}
+@mixin flexLayout(){
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    width: 90%;    
 }
 
 @mixin linkFont(){
     font-size: 1.2em;
     font-weight: 500;
-    color: $linkColor;
-}
-
-@mixin descFont(){
-    font-size: 1.1em;
-    font-weight: 400;
-    color: $descColor;
-}
-
-@mixin firstLetter(){
-    &:first-letter {
-        color: $linkColor;
-        font-weight: bold;
-        font-size: 1.2em;
-    }
-}
-
-@mixin aDate(){
-    float: left;
-    margin-left: 30px;
-    font-weight: 600;
-}
-
-@mixin aTitle(){
-    float: left;
-    margin: 0px 0px 0px 30px;
-    font-size: 1.3em;
-    font-weight: 800;
-    color: $red;
-    line-height: .8em;
+    color: $firstLetter;
+    text-shadow: 0px 0px 1px #000;
 }
 
 @mixin pageBg(){
     background-color: $pageBg;
-    border: 1px solid $cardBorder;
+    border: 1px solid $border;
     min-height: 80vh;
+}
+
+@mixin textFont(){
+    font-size: 1.1em;
+    font-weight: 400;
+    color: $textColor;
+}
+
+@mixin titleFont(){
+    font-size: 1.3em;
+    font-weight: 800;
+    color: $titleColor;
 }

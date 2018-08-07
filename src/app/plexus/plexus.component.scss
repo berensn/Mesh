@@ -1,70 +1,59 @@
 @import '../../assets/css/mixins.scss';
 
 hr{
-    width: 70%;
-    height: 1px;
     background-color: $red;
     border: 1px solid $red;
-}
-
-#plexusLayout{
-    width: 90%;
-    margin: auto;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    @include pageBg();
-}
-
-.visualArts{    
-    width: 90%;
-    margin: auto;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.writersBloc{
-    width: 90%;
-    margin: auto;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.cardCat{
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: 2.3em;
-    font-weight: 800;
-    margin: 10px;
-    color: $titleColor;
+    height: 1px;
+    width: 70%;
 }
 
 .card{
+    background-color: $cardBgColor;
+    border: 2px solid $border;
+    border-radius: 10px 0px;
+    float: left;
+    margin-top: 10px;
+    padding: 10px;
+    position: relative;
+    width: 25%;
     &:hover{
         border-color: $red;
-    }
-    position: relative;
-    border-radius: 10px 0px;
-    border: 2px solid $cardBorder;
-    padding: 10px;
-    width: 25%;
-    float: left;
-    background-color: $cardBgColor;
-    margin-top: 10px;        
+    }           
 }
 
-.cardTitle{
-    @include titleFont();
+.cardCat{
+    @include pageTitle;
+}
+
+.cardDesc{
+    @include textFont();
 }
 
 .cardLink{
     @include linkFont();
 }
 
-.cardDesc{
-    @include descFont();
+.cardTitle{
+    @include titleFont();
+}
+
+.visualArts{    
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    padding: 10px;
+    width: 90%;
+}
+
+.writersBloc{
+    @include flexLayout; 
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+#plexusLayout{
+    @include flexLayout; 
+    @include pageBg();
+    flex-direction: column;
+    margin: auto;
 }

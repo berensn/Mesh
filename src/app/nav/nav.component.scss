@@ -1,0 +1,21 @@
+@import '../../assets/css/mixins.scss';
+
+.menuImg{
+    border-radius: 50%;
+    border: 1px solid $border;
+    &:hover{
+        border-color: $red;
+    } 
+    &:hover div{
+        display: visible;
+    }
+}
+
+.tooltip{
+	background: $bgColor;
+    border: 1px solid $border;
+	color: $textColor;
+    display: inline-block;
+    padding: 3px;
+	text-align: center;
+}
