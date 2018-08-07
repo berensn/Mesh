@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JsonService } from '../helpers/json.service';
+import { JsonService } from '../_lib/service.json';
 
 @Component({
   selector: 'app-infocast',

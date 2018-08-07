@@ -34,11 +34,11 @@ ul{
     @include aDate();
 }
 
-#article{    
+#article{
     @include textFont();
     background-color: $articleBG;
     border: 1px solid $border;
-    margin: auto;
+    margin: 50px auto auto;
     padding-top: 25px;
     padding-bottom: 20px;
     text-align: center;
