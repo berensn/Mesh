@@ -33,10 +33,10 @@ li{
 }
 
 .infocast{
-    @include flexLayout; 
+    @include flexLayout;
     @include pageBg();
     align-items: flex-start;
-    margin: auto;
+    margin: 50px auto auto;
 }
 
 .title{

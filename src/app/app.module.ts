@@ -1,21 +1,21 @@
-
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 import { ArticleComponent } from './article/article.component';
 import { DossierComponent } from './dossier/dossier.component';
 import { FictionariumComponent, ModalComponentDialog } from './fictionarium/fictionarium.component';
-import { Globals } from './helpers/globals';
+import { Globals } from './_lib/globals';
 import { InfocastComponent } from './infocast/infocast.component';
-import { JsonService } from './helpers/json.service';
-import { Paginator } from './helpers/paginator';
+import { JsonService } from './_lib/service.json';
+import { NavComponent } from './nav/nav.component';
+import { Paginator } from './_lib/paginator';
 import { PlexusComponent } from './plexus/plexus.component';
-import { TransferService } from './helpers/transfer.service';
+import { TransferService } from './_lib/service.transfer';
+
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -50,8 +50,6 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
-import { NavComponent } from './nav/nav.component';
-
 
 @NgModule({
   declarations: [

@@ -3,16 +3,19 @@
 */
 
 import { Component, OnInit, ChangeDetectorRef, ElementRef, Renderer2 } from '@angular/core';
-import { Globals } from '../helpers/globals';
-import { JsonService } from '../helpers/json.service';
-import { Paginator } from '../helpers/paginator';
-import { TransferService } from '../helpers/transfer.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { fadeInAnimation } from '../_lib/animations.route';
+import { Globals } from '../_lib/globals';
+import { Paginator } from '../_lib/paginator';
+import { JsonService } from '../_lib/service.json';
+import { TransferService } from '../_lib/service.transfer';
+
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.scss']
+  styleUrls: ['./article.component.scss'],
+  animations: [fadeInAnimation],
+  host: {'[@fadeInAnimation': ''}
 })
 export class ArticleComponent implements OnInit {
 
@@ -32,7 +35,6 @@ export class ArticleComponent implements OnInit {
     public ts: TransferService, 
     private cdr: ChangeDetectorRef, 
     private render: Renderer2,
-    private sanitize: DomSanitizer
   ) { }
   
   // Formatting and on/off values for console.log

@@ -31,9 +31,9 @@ li{
 }
 
 .fictionarium{
-    @include flexLayout; 
+    @include flexLayout;
     @include pageBg();  
-    margin: auto;
+    margin: 50px auto auto;
 
 }
 

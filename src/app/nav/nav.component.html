@@ -1,30 +1,60 @@
 <a routerLink="">
-    <img src="../../assets/img/foyer.jpg" class="img" id="menuSource"/>
+    <img src="../../assets/img/foyer.jpg" class="img" id="menuRoot"
+         [@menuRootAnimation]="menuRoot"
+         (mouseenter)="menuRootEnter($event)" 
+         (mouseleave)="menuRootLeave($event)"/>
 </a>
 <ul class="menuList" id="mainMenu">
-    <li class="menuItem">
+    <li class="menuItem"  #menuItem>
         <a routerLink="dossier">
-            <img src="../../assets/img/dossier.jpg" class="img menuImg" id="dossier"/>
+            <img src="../../assets/img/dossier.jpg" class="img menuImg" id="dossier"
+                 [@menuAnimation]="menuRoot"
+                 (mouseenter)="menuItemEnter('dossier')" (mouseleave)="menuItemLeave('dossier')"/>
         </a>
-        <div class="tooltip" id='first'>Dossier</div>
+        <div class="tooltip" id='dossier' #dossier [@dossierToolTipAnimation]="dossierToolTip">Dossier</div>
     </li>
-    <li class="menuItem">
+    <li class="menuItem"  #menuItem>
         <a routerLink="fictionarium">	
-            <img src="../../assets/img/fictionarium.jpg" class="img menuImg" id="fictionarium"/>
+            <img src="../../assets/img/fictionarium.jpg" class="img menuImg" id="fictionarium"
+                 [@menuAnimation]="menuRoot"
+                 (mouseenter)="menuItemEnter('fictionarium')" (mouseleave)="menuItemLeave('fictionarium')"/>
         </a>
-        <div class="tooltip" id='second'>Fictionarium</div>
+        <div class="tooltip" id='fictionarium' #fictionarium [@fictionariumToolTipAnimation]="fictionariumToolTip">Fictionarium</div>
     </li>
-    <li class="menuItem">
+    <li class="menuItem"  #menuItem>
         <a routerLink="plexus">
-            <img src="../../assets/img/plexus.jpg" class="img menuImg" id="plexus"/>
+            <img src="../../assets/img/plexus.jpg" class="img menuImg" id="plexus"
+                 [@menuAnimation]="menuRoot"
+                 (mouseenter)="menuItemEnter('plexus')" (mouseleave)="menuItemLeave('plexus')"/>
         </a>
-        <div class="tooltip" id='third'>Plexus</div>
+        <div class="tooltip" id='plexus' #plexus [@plexusToolTipAnimation]="plexusToolTip">Plexus</div>
     </li>
-    <li class="menuItem">
+    <li class="menuItem"  #menuItem>
         <a routerLink="infocast">
-            <img src="../../assets/img/infocast.jpg" class="img menuImg" id="infocast"/>
+            <img src="../../assets/img/infocast.jpg" class="img menuImg" id="infocast"
+                 [@menuAnimation]="menuRoot"
+                 (mouseenter)="menuItemEnter('infocast')" (mouseleave)="menuItemLeave('infocast')"/>
         </a>
-        <div class="tooltip" id='fourth'>Infocast</div>
+        <div class="tooltip" id='infocast' #infocast [@infocastToolTipAnimation]="infocastToolTip">Infocast</div>
     </li>
 </ul>
-
+<div id="infoBoxContainer" [@infoBoxAnimation]="infoBox">
+    <div id="infoBoxFoot">
+        <div id="disclaimerContainer" >
+            <img src="../../assets/img/skull.jpg" />
+            The works published here are works of fiction. 
+            Characters, places and events portrayed are the product of either the authors imagination, nightmares, or mad ravings. Or they are real people, places and events used fictitiously. Either way, any resemblence to reality is entirely coincidental.
+            Unless its not.
+        </div>
+        <div id="copyright">Copyright&copy; 2018 Nathaniel Berens. All rights reserved.</div>
+    </div>
+</div>
+<div id="infoBoxTriggerContainer" 
+     [@menuAnimation]="menuRoot"
+     (mouseenter)="menuItemEnter('infoBox')"
+     (mouseleave)="menuItemLeave('infoBox')"> 
+    <img src="../../assets/img/infoIcon.jpg" id="infoBoxTrigger"/>
+</div>
+<div id="searchBoxContainer"
+     [@menuAnimation]="menuRoot">
+</div>
