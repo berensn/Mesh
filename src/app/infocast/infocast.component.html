@@ -2,7 +2,9 @@
     <div><span class="cardCat">Infocast</span></div>
     <ul class = 'info'>
         <li *ngFor = "let jsonInfocast of jsonInfocasts"
-            (click)="onSelect(jsonInfocast)">
+            (click)="onSelect(jsonInfocast)"
+            audioEffectsHover
+            audioEffectsClick>
             <span class = 'title'>{{ jsonInfocast.title }}</span><br/>
             <span class="date">{{ jsonInfocast.publishDate | date:'fullDate'}}</span><br/><br/>
             <div class="introBit" [innerHTML] = "jsonInfocast.content"></div>

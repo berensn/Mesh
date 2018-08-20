@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 import { JsonService } from '../_lib/service.json';
 
 @Component({

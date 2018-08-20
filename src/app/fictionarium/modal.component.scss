@@ -1,11 +1,14 @@
 @import '../../assets/css/mixins.scss';
 
 li{
-    color: $red;
+    color: $firstLetter;
     display: inline;
     font-size: 18px;
     padding-left: 5px;
-    padding-right: 5px;    
+    padding-right: 5px;
+    &:hover{
+        color: $red;
+    }
 }
 
 ul{
@@ -24,17 +27,19 @@ ul{
     @include firstLetter();
 }
 
-.paginate{    
+.paginate{
+    @include textFont();
     margin:auto;
     text-align: center;
     width: 30%;
 }
 
 #modalContent{    
-    background-color: $articleBG;
+    background-color: $modalBG;
+    color: $textColor;
     columns: 2 39vw;
     column-gap: 40px;
-    column-rule: 2px solid #000;
+    column-rule: 2px solid $firstLetter;
     margin: auto;
     max-height: 90vh;
     max-width: 100vw;

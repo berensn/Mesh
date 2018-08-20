@@ -4,12 +4,13 @@
 */
 
 import { Component, OnInit, Inject, ElementRef, ChangeDetectorRef, Renderer2 } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 import { Globals } from '../_lib/globals';
 import { JsonFormat } from '../_lib/json.format';
-import { JsonService } from '../_lib/service.json';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { TransferService } from '../_lib/service.transfer';
 import { Paginator } from '../_lib/paginator';
+import { JsonService } from '../_lib/service.json';
+import { TransferService } from '../_lib/service.transfer';
 
 @Component({
   selector: 'app-fictionarium',

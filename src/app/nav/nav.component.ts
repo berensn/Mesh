@@ -6,6 +6,7 @@ import {
   ViewChildren,
   AfterViewInit,
 } from '@angular/core';
+import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 import {
   dossierToolTipAnimation,
   fictionariumToolTipAnimation,

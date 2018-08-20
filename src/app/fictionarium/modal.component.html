@@ -6,7 +6,12 @@
 <ng-container *ngIf= "pageList.length != 1">
 <div class="paginate">
     <ul id="pagination" >
-        <li *ngFor= "let page of pageList" (click)= "jumpToPage(page)">{{ page }}</li>
+        <li *ngFor= "let page of pageList"
+            (click)= "jumpToPage(page)"
+            audioEffectsHover
+            audioEffectsClick>
+            {{ page }}
+        </li>
     </ul>
     Page {{currentPage }} of {{ pageJumper.length }}
 </div>
