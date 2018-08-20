@@ -45,10 +45,6 @@ export class NavComponent implements AfterViewInit {
   plexusToolTip = 'inactive';
 
   @ViewChildren('menuItem') private menuItems: QueryList<any>
-  @ViewChild('dossier') private dossier: ElementRef
-  @ViewChild('fictionarium') private fictionarium: ElementRef
-  @ViewChild('plexus') private plexus: ElementRef
-  @ViewChild('infocast') private infocst: ElementRef
   
   ngAfterViewInit(){
     this.setMenuItemPosition(this.menuItems);
