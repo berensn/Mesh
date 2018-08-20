@@ -4,6 +4,7 @@
 
 import { Component, OnInit, ChangeDetectorRef, ElementRef, Renderer2 } from '@angular/core';
 import { fadeInAnimation } from '../_lib/animations.route';
+import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 import { Globals } from '../_lib/globals';
 import { Paginator } from '../_lib/paginator';
 import { JsonService } from '../_lib/service.json';

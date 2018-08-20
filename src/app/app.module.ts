@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ArticleComponent } from './article/article.component';
 import { DossierComponent } from './dossier/dossier.component';
 import { FictionariumComponent, ModalComponentDialog } from './fictionarium/fictionarium.component';
+import { AudioEffectsClick, AudioEffectsHover } from './_lib/audio.effects';
 import { Globals } from './_lib/globals';
 import { InfocastComponent } from './infocast/infocast.component';
 import { JsonService } from './_lib/service.json';
@@ -54,6 +55,8 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
+    AudioEffectsClick, 
+    AudioEffectsHover,
     ArticleComponent,
     DossierComponent,
     FictionariumComponent,

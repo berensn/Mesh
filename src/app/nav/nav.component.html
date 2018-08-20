@@ -1,5 +1,7 @@
 <a routerLink="">
     <img src="../../assets/img/foyer.jpg" class="img" id="menuRoot"
+         audioEffectsHover
+         audioEffectsClick       
          [@menuRootAnimation]="menuRoot"
          (mouseenter)="menuRootEnter($event)" 
          (mouseleave)="menuRootLeave($event)"/>
@@ -8,6 +10,8 @@
     <li class="menuItem"  #menuItem>
         <a routerLink="dossier">
             <img src="../../assets/img/dossier.jpg" class="img menuImg" id="dossier"
+                 audioEffectsHover
+                 audioEffectsClick
                  [@menuAnimation]="menuRoot"
                  (mouseenter)="menuItemEnter('dossier')" (mouseleave)="menuItemLeave('dossier')"/>
         </a>
@@ -16,6 +20,8 @@
     <li class="menuItem"  #menuItem>
         <a routerLink="fictionarium">	
             <img src="../../assets/img/fictionarium.jpg" class="img menuImg" id="fictionarium"
+                 audioEffectsHover
+                 audioEffectsClick
                  [@menuAnimation]="menuRoot"
                  (mouseenter)="menuItemEnter('fictionarium')" (mouseleave)="menuItemLeave('fictionarium')"/>
         </a>
@@ -24,6 +30,8 @@
     <li class="menuItem"  #menuItem>
         <a routerLink="plexus">
             <img src="../../assets/img/plexus.jpg" class="img menuImg" id="plexus"
+                 audioEffectsHover
+                 audioEffectsClick 
                  [@menuAnimation]="menuRoot"
                  (mouseenter)="menuItemEnter('plexus')" (mouseleave)="menuItemLeave('plexus')"/>
         </a>
@@ -32,6 +40,8 @@
     <li class="menuItem"  #menuItem>
         <a routerLink="infocast">
             <img src="../../assets/img/infocast.jpg" class="img menuImg" id="infocast"
+                 audioEffectsHover
+                 audioEffectsClick 
                  [@menuAnimation]="menuRoot"
                  (mouseenter)="menuItemEnter('infocast')" (mouseleave)="menuItemLeave('infocast')"/>
         </a>
@@ -49,12 +59,16 @@
         <div id="copyright">Copyright&copy; 2018 Nathaniel Berens. All rights reserved.</div>
     </div>
 </div>
-<div id="infoBoxTriggerContainer" 
+<div id="infoBoxTriggerContainer"
+     audioEffectsHover
+     audioEffectsClick 
      [@menuAnimation]="menuRoot"
      (mouseenter)="menuItemEnter('infoBox')"
      (mouseleave)="menuItemLeave('infoBox')"> 
     <img src="../../assets/img/infoIcon.jpg" id="infoBoxTrigger"/>
 </div>
 <div id="searchBoxContainer"
+     audioEffectsHover
+     audioEffectsClick 
      [@menuAnimation]="menuRoot">
 </div>
