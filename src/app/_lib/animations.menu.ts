@@ -1,4 +1,4 @@
-import { trigger, state, animate, transition, style } from '@angular/animations';
+import { animate, state, style,  transition, trigger } from '@angular/animations';
 
 export const dossierToolTipAnimation = 
   trigger('dossierToolTipAnimation', [
@@ -42,7 +42,7 @@ export const menuAnimation =
 
 export const menuRootAnimation = 
   trigger('menuRootAnimation', [
-    state('inactive', style({'opacity': .4})),
+    state('inactive', style({'opacity': .2})),
     state('active', style({'opacity': 1})),
     transition('inactive => active', animate('600ms ease-out')),
     transition('active => inactive', animate('600ms 1500ms ease-out'))

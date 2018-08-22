@@ -1,11 +1,11 @@
-<div id="article">
+<div id="article" [@articleAnimation]="articleState">
     <ng-container *ngFor = "let jsonArticle of jsonArticles; let index = index">
         <ng-container *ngIf = "index == 0">
             <span class="aTitle">{{ jsonArticle.title }}</span><br/>
-            <span class ="aDate">{{ jsonArticle.publishDate | date:'fullDate' }}</span><br/>
- 
-                <div id= "pageContent" [paginator]= "jsonArticle.content"></div>
-     
+            <span class ="aDate">{{ jsonArticle.publishDate | date:'fullDate' }}</span><br/> 
+            <div id= "pageContent" 
+                [paginator]= "jsonArticle.content"
+                [@pageInOutAnimation]="pageInOut"></div>     
         </ng-container>
     </ng-container>
     <ng-container *ngIf= "pageList.length != 1">

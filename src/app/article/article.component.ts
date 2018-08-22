@@ -3,7 +3,7 @@
 */
 
 import { Component, OnInit, ChangeDetectorRef, ElementRef, Renderer2 } from '@angular/core';
-import { fadeInAnimation } from '../_lib/animations.route';
+import { articleAnimation, pageInOutAnimation, pageLoadAnimation } from '../_lib/animations.page';
 import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 import { Globals } from '../_lib/globals';
 import { Paginator } from '../_lib/paginator';
@@ -15,8 +15,7 @@ import { TransferService } from '../_lib/service.transfer';
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss'],
-  animations: [fadeInAnimation],
-  host: {'[@fadeInAnimation': ''}
+  animations: [articleAnimation, pageInOutAnimation, pageLoadAnimation]
 })
 export class ArticleComponent implements OnInit {
 
@@ -28,6 +27,8 @@ export class ArticleComponent implements OnInit {
   private currentPage = 1;            // Set current page to 1
   private pageList: any[] = [];       // Array containing the list of page numbers [First, Prev, 1, 2, ...]
   private _jsonUrl: string = "../assets/data/articles.json";    // Url of articles.json file
+  articleState = 'articleLoading';
+  pageInOut = 'pageIn';
 
   // Consturctors
   constructor(
@@ -57,6 +58,7 @@ export class ArticleComponent implements OnInit {
     if (this.log) console.log('%c[article.component.ts][ngDoCheck()] %cpageJumper: ', this.loc, this.item), console.log(this.pageJumper)
     this.cdr.detectChanges();
     this.pageList =  this._g.pageNumberList(this.pageJumper.length, this.currentPage); 
+    setTimeout(()=>{this.articleState = "articleLoaded"}, 300);
   }
 
   // Gets articles via article.service.ts
@@ -68,17 +70,23 @@ export class ArticleComponent implements OnInit {
   }
 
   // Returns substring (page) that corresponds to page number
-  jumpToPage(newpage){  
+  jumpToPage(newpage){
+    this.pageInOut = 'pageOut';
     this.currentPage = this._g.pageJump(newpage, this.currentPage, this.pageJumper.length);
-    this.contentBox.nativeElement.innerHTML = 
+
+    setTimeout(()=>{
+      this.contentBox.nativeElement.innerHTML = 
       this.content.substring(
         this.pageJumper[this.currentPage - 1]['subStart'],
         this.pageJumper[this.currentPage - 1]['subEnd']).trim();
-    if (this.currentPage == 1){
-      this.render.addClass(this.contentBox.nativeElement, 'firstLetter');
-    }else{
-      this.render.removeClass(this.contentBox.nativeElement, 'firstLetter');
-    }
+      if (this.currentPage == 1){
+        this.render.addClass(this.contentBox.nativeElement, 'firstLetter');
+      }else{
+        this.render.removeClass(this.contentBox.nativeElement, 'firstLetter');
+      }
+      this.pageInOut = 'pageIn';
+      }, 
+      300);
 
     // Logging
     if (this.log) console.log('%c[article.component.ts][jumpToPage()] %ccurrentPage: %c%s', this.loc, this.val, this.val, this.currentPage);
