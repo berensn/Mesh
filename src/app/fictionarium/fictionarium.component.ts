@@ -5,6 +5,7 @@
 
 import { Component, OnInit, Inject, ElementRef, ChangeDetectorRef, Renderer2 } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { pageInOutAnimation, pageLoadAnimation } from '../_lib/animations.page';
 import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 import { Globals } from '../_lib/globals';
 import { JsonFormat } from '../_lib/json.format';
@@ -15,7 +16,8 @@ import { TransferService } from '../_lib/service.transfer';
 @Component({
   selector: 'app-fictionarium',
   templateUrl: './fictionarium.component.html',
-  styleUrls: ['./fictionarium.component.scss']
+  styleUrls: ['./fictionarium.component.scss'],
+  animations: [pageLoadAnimation]
 })
 export class FictionariumComponent implements OnInit {
 
@@ -29,6 +31,10 @@ export class FictionariumComponent implements OnInit {
   // Methods
   ngOnInit() {
     this.getArticles();
+  }
+
+  ngOnDestroy(){
+    this.dialog.closeAll();
   }
 
   // Gets articles via article.service.ts
@@ -64,7 +70,8 @@ export class FictionariumComponent implements OnInit {
 @Component({
   selector: 'modal-component-dialog',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss']
+  styleUrls: ['./modal.component.scss'],
+  animations: [pageInOutAnimation]
 })
 export class ModalComponentDialog {
   
@@ -74,6 +81,7 @@ export class ModalComponentDialog {
   public contentBox: ElementRef;        // DOM element to hold content
   private currentPage = 1;              // Set current page to 1
   private pageList: any[] = [];         // Array containing the list of page numbers [First, Prev, 1, 2, ...]
+  pageInOut = 'pageIn';
 
   // Constructors
   constructor( private _g: Globals, public dialogRef: MatDialogRef<ModalComponentDialog>, @Inject(MAT_DIALOG_DATA) public data: any, public ts: TransferService, private cdr: ChangeDetectorRef, private render: Renderer2) { }
@@ -96,16 +104,22 @@ export class ModalComponentDialog {
 
   // Returns substring (page) that corresponds to page number
   jumpToPage(newpage){    
+    this.pageInOut = 'pageOut';
     this.currentPage = this._g.pageJump(newpage, this.currentPage, this.pageJumper.length);
-    this.contentBox.nativeElement.innerHTML = 
+
+    setTimeout(()=>{
+      this.contentBox.nativeElement.innerHTML = 
       this.content.substring(
         this.pageJumper[this.currentPage - 1]['subStart'],
         this.pageJumper[this.currentPage - 1]['subEnd']).trim();
-    if (this.currentPage == 1){
-      this.render.addClass(this.contentBox.nativeElement, 'firstLetter');
-    }else{
-      this.render.removeClass(this.contentBox.nativeElement, 'firstLetter');
-    }
+      if (this.currentPage == 1){
+        this.render.addClass(this.contentBox.nativeElement, 'firstLetter');
+      }else{
+        this.render.removeClass(this.contentBox.nativeElement, 'firstLetter');
+      }
+      this.pageInOut = 'pageIn';
+      }, 
+      300);
 
     // Logging
     if (this.log) console.log('%c[fictionarium.component.ts][jumpToPage()] %ccurrentPage: %c%s', this.loc, this.item, this.val, this.currentPage);

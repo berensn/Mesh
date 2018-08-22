@@ -1,7 +1,9 @@
 <div *ngIf="data">
     <span class="aTitle">{{ data.title }}</span><br/>
     <span class="aDate">{{ data.date | date:'fullDate' }}</span><br/>
-    <div id="modalContent" [paginator]= "data.content"></div>
+    <div id="modalContent" 
+         [paginator]= "data.content"
+         [@pageInOutAnimation]="pageInOut"></div>
 </div>
 <ng-container *ngIf= "pageList.length != 1">
 <div class="paginate">

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { pageLoadAnimation } from '../_lib/animations.page';
 import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 import { JsonService } from '../_lib/service.json';
 
 @Component({
   selector: 'app-infocast',
   templateUrl: './infocast.component.html',
-  styleUrls: ['./infocast.component.scss']
+  styleUrls: ['./infocast.component.scss'],
+  animations: [pageLoadAnimation]
 })
 export class InfocastComponent implements OnInit {
 
