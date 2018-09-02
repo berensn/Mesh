@@ -83,6 +83,7 @@ export class Paginator implements AfterViewInit{
     // Add a span element with a single char and get the w/h of the span then remove it
     const span = this.render.createElement('span');
     const text = this.render.createText('W');
+    this.render.setStyle(span, 'opacity', 0);
     this.render.appendChild(span, text);
     this.render.appendChild(contentBox.nativeElement, span);      
     let width = span.getBoundingClientRect().width;
@@ -112,7 +113,7 @@ export class Paginator implements AfterViewInit{
       this.pageJump.push({pageNum: i, subStart: this.subStart, subEnd: this.subEnd});
       this.subStart = this.subEnd;
       this.subEnd += this.avgPageSize;
-      this.whitespace(); 
+      this.whitespace();
     }
 
     // Pass variables via transferservice.ts to components 
