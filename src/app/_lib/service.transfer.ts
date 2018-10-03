@@ -22,6 +22,10 @@ export class TransferService {
   private elementSource = new BehaviorSubject(<ElementRef>(null));
   elementTransfer = this.elementSource.asObservable();
 
+  // Animation for article page
+  private articleStateSource = new BehaviorSubject(<string>(''));
+  articleStateTransfer = this.articleStateSource.asObservable();
+
   constructor(){}
 
   // Methods
@@ -35,5 +39,9 @@ export class TransferService {
 
   updateElement(update: ElementRef){
     this.elementSource.next(update);
+  }
+
+  updateArticleState(update: string){
+    this.articleStateSource.next(update);
   }
 }

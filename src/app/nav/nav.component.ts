@@ -1,10 +1,11 @@
 import {
+  AfterViewInit,
   Component,
   QueryList,
   ViewChildren,
-  AfterViewInit,
+  ViewChild,
+  ElementRef
 } from '@angular/core';
-import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 import {
   dossierToolTipAnimation,
   fictionariumToolTipAnimation,
@@ -14,6 +15,7 @@ import {
   menuRootAnimation,
   plexusToolTipAnimation
 } from '../_lib/animations.menu';
+import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 
 @Component({
   selector: 'app-nav',
@@ -33,7 +35,7 @@ import {
 })
 export class NavComponent implements AfterViewInit {
 
-  constructor() {}
+  constructor(private imgList: ElementRef, private el: ElementRef) {}
   
   menuRoot = 'inactive';
   dossierToolTip = 'inactive';
@@ -41,30 +43,24 @@ export class NavComponent implements AfterViewInit {
   infoBox = 'inactive';
   infocastToolTip = 'inactive';
   plexusToolTip = 'inactive';
-
+  
   @ViewChildren('menuItem') private menuItems: QueryList<any>
   
   ngAfterViewInit(){
     this.setMenuItemPosition(this.menuItems);
   }
 
-  nodeWidth(selector, nodeList){
-    let element = nodeList.nativeElement.querySelectorAll(selector);
-    return element[0].naturalWidth;
-  }
-
   setMenuItemPosition(items){
-    let angle = 0;    
-    let menuItemsArray = [];
-    items.forEach(i => menuItemsArray.push(i));
+    let angle = 0;
     let radians = 0;
-    let radius = this.nodeWidth(".menuImg", menuItemsArray[0]);    
+    let radius = this.el.nativeElement.getElementsByClassName('menuImg').item(0).naturalWidth;;    
     let step = 90/(items.length + 1);
     let count = 1;
     let x = 0;
-    let y = 0;    
+    let y = 0;
     
     items.forEach(i => {
+      if (radius == 0) radius = 100;
       angle = angle + step;
       radians = angle * (Math.PI/180);
       if(count === 1 || count === 4){

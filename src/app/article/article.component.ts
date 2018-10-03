@@ -48,6 +48,7 @@ export class ArticleComponent implements OnInit {
   // Methods
   ngOnInit(){
     this.getArticles();
+    setTimeout(()=>{this.ts.articleStateTransfer.subscribe(message => this.articleState = message)}, 335);
   }
 
   ngDoCheck(){
@@ -58,8 +59,7 @@ export class ArticleComponent implements OnInit {
     if (this.log) console.log('%c[article.component.ts][ngDoCheck()] %cpageJumper: ', this.loc, this.item), console.log(this.pageJumper)
     this.cdr.detectChanges();
     this.pageList =  this._g.pageNumberList(this.pageJumper.length, this.currentPage); 
-    setTimeout(()=>{this.articleState = "articleLoaded"}, 300);
-  }
+ }
 
   // Gets articles via article.service.ts
   getArticles(): void {

@@ -5,7 +5,6 @@
   Transfer service transfers variables so that the Paginator Directive can be used by any component.
   Whitespace function is used to ensure page breaks don't fall in the middle of words.
 */
-
 import { 
   AfterViewInit,
   Directive,
@@ -14,13 +13,14 @@ import {
   Input,  
   Renderer2
 } from '@angular/core';
-import { Globals } from './globals';
-import { TransferService } from './service.transfer';
+import { Globals } from '../_lib/globals';
+import { TransferService } from '../_lib/service.transfer';
 
 @Directive({
   selector: '[paginator]'
 })
 export class Paginator implements AfterViewInit{
+  articleState = 'articleLoading';  // Sets starting animation state
   avgPageSize = 0;          // Avg char length of a page, used to create equal sized pages    
   content = '';             // Article as string from JSON file 
   contentBox = undefined;   // HTML element to place contnet in
@@ -39,18 +39,19 @@ export class Paginator implements AfterViewInit{
   @HostListener('window:resize') 
     onResize() {
       // Reset appropriate vars
+      this.articleState = 'articleLoading';
       this.avgPageSize = 0;
       this.content = '';
       this.contentBox = undefined;
       this.contentHeight = 0;
       this.contentLen = 0;
       this.maxPage = 0;
-      this.numPages = 0; 
+      this.numPages = 0;
       this.pageJump = [];
       this.pageLen = 0; 
-      this.subEnd = 0;   
+      this.subEnd = 0;
       this.subStart = 0;
-      this.pageContent(this.el, this.paginator);  
+      this.pageContent(this.el, this.paginator);
     }    
   
   // Constructors
@@ -104,6 +105,7 @@ export class Paginator implements AfterViewInit{
     this.whitespace();
     this.contentBox.nativeElement.innerHTML = this.content.substring(this.subStart, this.subEnd).trim();
     this.render.addClass(contentBox.nativeElement, 'firstLetter');
+    this.articleState = "articleLoaded";
 
     // Set up Pagination
     for (let i = 1; i <= this.numPages; i++){
@@ -120,6 +122,7 @@ export class Paginator implements AfterViewInit{
     this.ts.updatePageJump(this.pageJump);
     this.ts.updateContent(this.content);
     this.ts.updateElement(this.contentBox);
+    this.ts.updateArticleState(this.articleState);
 
     /*
       This sets the contentBox to the height of the largest page to prevent the contentBox
