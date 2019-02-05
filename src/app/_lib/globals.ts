@@ -23,7 +23,7 @@ export class Globals{
   private logging = true;         // Turn console logging on/off
 
   // Getters
-  get loc(){                      // Getter for locText color 
+  get loc(){                      // Getter for locText color
     return this.locText;
   }
   get item(){                     // Getter for itemText color
@@ -36,11 +36,11 @@ export class Globals{
     return this.logging;
   }
 
-  /* List of page numbers w/ First/Prev|Next/Last. Grokked w/ modifications from 
-    http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google     
+  /* List of page numbers w/ First/Prev|Next/Last. Grokked w/ modifications from
+    http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
   */
   pageNumberList(totalPages, currentPage){
-    let pageList = [];    
+    let pageList = [];
     if (totalPages <= 10){
       for (let i = 1; i <= totalPages; i++){
         pageList.push(i);

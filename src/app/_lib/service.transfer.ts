@@ -14,7 +14,7 @@ export class TransferService {
   private pageJumpSource = new BehaviorSubject(<number[]>([]));
   pageJumpTransfer = this.pageJumpSource.asObservable();
 
-  // Selected article from articles.json via paginator.ts 
+  // Selected article from articles.json via paginator.ts
   private contentSource = new BehaviorSubject(<string>(''));
   contentTransfer = this.contentSource.asObservable();
 

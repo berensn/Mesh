@@ -6,12 +6,12 @@
   Whitespace function is used to ensure page breaks don't fall in the middle of words.
 */
 
-import { 
+import {
   AfterViewInit,
   Directive,
   ElementRef,
   HostListener,
-  Input,  
+  Input,
   Renderer2
 } from '@angular/core';
 import { Globals } from './globals';
@@ -21,8 +21,8 @@ import { TransferService } from './service.transfer';
   selector: '[paginator]'
 })
 export class Paginator implements AfterViewInit{
-  avgPageSize = 0;          // Avg char length of a page, used to create equal sized pages    
-  content = '';             // Article as string from JSON file 
+  avgPageSize = 0;          // Avg char length of a page, used to create equal sized pages
+  content = '';             // Article as string from JSON file
   contentBox = undefined;   // HTML element to place contnet in
   contentHeight = 0;        // Sets content container height
   contentLen = 0;           // Length of content
@@ -36,7 +36,7 @@ export class Paginator implements AfterViewInit{
   @Input() paginator;       // Gets input from HTML template via paginator selector
   
   // On window size change, resizes the contentBox and adjusts other variables accordingly
-  @HostListener('window:resize') 
+  @HostListener('window:resize')
     onResize() {
       // Reset appropriate vars
       this.avgPageSize = 0;
@@ -45,29 +45,29 @@ export class Paginator implements AfterViewInit{
       this.contentHeight = 0;
       this.contentLen = 0;
       this.maxPage = 0;
-      this.numPages = 0; 
+      this.numPages = 0;
       this.pageJump = [];
-      this.pageLen = 0; 
-      this.subEnd = 0;   
+      this.pageLen = 0;
+      this.subEnd = 0;
       this.subStart = 0;
-      this.pageContent(this.el, this.paginator);  
-    }    
-  
+      this.pageContent(this.el, this.paginator);
+    }
+
   // Constructors
   constructor(
-    private el: ElementRef, 
-    private _g: Globals, 
-    private render: Renderer2,  
+    private el: ElementRef,
+    private _g: Globals,
+    private render: Renderer2,
     private ts: TransferService,
   ){}
 
   // Formatting and on/off values for console.log
   item = this._g.item;      // Item color
   loc = this._g.loc;        // Location color
-  log = this._g.log;        // Logging on/off 
+  log = this._g.log;        // Logging on/off
   val = this._g.val;        // Value color
 
-  ngAfterViewInit(){   
+  ngAfterViewInit(){
     if (this.log) console.log('%c[paginator.ts][ngAfterViewInit()] %cMessage: %cIN ', this.loc, this.item, this.val);
     this.pageContent(this.el, this.paginator);
   }
@@ -85,7 +85,7 @@ export class Paginator implements AfterViewInit{
     const text = this.render.createText('W');
     this.render.setStyle(span, 'opacity', 0);
     this.render.appendChild(span, text);
-    this.render.appendChild(contentBox.nativeElement, span);      
+    this.render.appendChild(contentBox.nativeElement, span);
     let width = span.getBoundingClientRect().width;
     let height = span.getBoundingClientRect().height;
     this.render.removeChild(contentBox, span);
@@ -97,9 +97,9 @@ export class Paginator implements AfterViewInit{
     let numLine = Math.floor(((windowHeight/(Math.ceil(height))) - 1));
     this.pageLen = Math.floor((numChar * numLine) * 1.4);
           
-    // Insert first page content    
+    // Insert first page content
     this.numPages = Math.ceil((this.contentLen / this.pageLen));
-    this.avgPageSize = Math.floor(this.contentLen / this.numPages); 
+    this.avgPageSize = Math.floor(this.contentLen / this.numPages);
     this.subEnd = this.avgPageSize;
     this.whitespace();
     this.contentBox.nativeElement.innerHTML = this.content.substring(this.subStart, this.subEnd).trim();
@@ -116,7 +116,7 @@ export class Paginator implements AfterViewInit{
       this.whitespace();
     }
 
-    // Pass variables via transferservice.ts to components 
+    // Pass variables via transferservice.ts to components
     this.ts.updatePageJump(this.pageJump);
     this.ts.updateContent(this.content);
     this.ts.updateElement(this.contentBox);
@@ -133,16 +133,16 @@ export class Paginator implements AfterViewInit{
     for (let i in this.pageJump){
       if ((this.pageJump[i]['subEnd'] - this.pageJump[i]['subStart']) > this.maxPage){
         this.maxPage = (this.pageJump[i]['subEnd'] - this.pageJump[i]['subStart']);
-      } 
+      }
     }
     // Set the multiplier
     let multiplier = this.maxPage / this.avgPageSize;
     // Get current DOM element height
     this.contentHeight = contentBox.nativeElement.getBoundingClientRect().height;
-    // Set DOM element height 
+    // Set DOM element height
     this.contentBox.nativeElement.style.height = (this.contentHeight * multiplier) + 'px';
 
-    /* Logging for troubleshooting */  
+    /* Logging for troubleshooting */
     if (this.log) {
       console.log('%c[paginator.ts] Log Start -------------------', this.loc);
       console.log('  %ccontentLen: %c%s', this.item, this.val, this.contentLen);
@@ -163,8 +163,8 @@ export class Paginator implements AfterViewInit{
       console.log('%c[paginator.ts] Log End -------------------', this.loc);
     }
   }
-  
-  // Tweak avgPageSize to fall on whitespace      
+
+  // Tweak avgPageSize to fall on whitespace
   whitespace(): void{
     while (this.content.charAt(this.subEnd) != ' '){
       this.subEnd -= 1;

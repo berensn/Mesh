@@ -15,7 +15,7 @@ export class JsonService {
 
   // Methods
   getArticles(_jsonUrl: string): Observable<JsonFormat[]>{
-    return this.http.get<JsonFormat[]>(_jsonUrl);      
+    return this.http.get<JsonFormat[]>(_jsonUrl);
   }
 
   getInfocast(_jsonUrl: string): Observable<JsonFormat[]>{

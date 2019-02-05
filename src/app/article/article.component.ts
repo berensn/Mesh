@@ -25,25 +25,25 @@ export class ArticleComponent implements OnInit {
   public content;                     // Newest article from articles.json via paginator.ts
   public contentBox: ElementRef;      // DOM element to hold content
   private currentPage = 1;            // Set current page to 1
-  private pageList: any[] = [];       // Array containing the list of page numbers [First, Prev, 1, 2, ...]
+  public pageList: any[] = [];       // Array containing the list of page numbers [First, Prev, 1, 2, ...]
   private _jsonUrl: string = "../assets/data/articles.json";    // Url of articles.json file
   articleState = 'articleLoading';
   pageInOut = 'pageIn';
 
   // Consturctors
   constructor(
-    private _g: Globals, 
-    private jsonService: JsonService, 
-    public ts: TransferService, 
-    private cdr: ChangeDetectorRef, 
+    private _g: Globals,
+    private jsonService: JsonService,
+    public ts: TransferService,
+    private cdr: ChangeDetectorRef,
     private render: Renderer2,
   ) { }
-  
+
   // Formatting and on/off values for console.log
   loc = this._g.loc;        // Location color
   item = this._g.item;      // Item color
   val = this._g.val;        // Value color
-  log = this._g.log;        // Logging on/off 
+  log = this._g.log;        // Logging on/off
 
   // Methods
   ngOnInit(){
@@ -57,16 +57,16 @@ export class ArticleComponent implements OnInit {
     this.ts.elementTransfer.subscribe(message => this.contentBox = message);
     if (this.log) console.log('%c[article.component.ts][ngDoCheck()] %cpageJumper: ', this.loc, this.item), console.log(this.pageJumper)
     this.cdr.detectChanges();
-    this.pageList =  this._g.pageNumberList(this.pageJumper.length, this.currentPage); 
-    setTimeout(()=>{this.articleState = "articleLoaded"}, 300);
+    this.pageList =  this._g.pageNumberList(this.pageJumper.length, this.currentPage);
+    setTimeout(() => {this.articleState = "articleLoaded"}, 300);
   }
 
   // Gets articles via article.service.ts
   getArticles(): void {
     this.jsonService.getArticles(this._jsonUrl)
       .subscribe(data => {
-        this.jsonArticles = data;         
-      });      
+        this.jsonArticles = data;
+      });
   }
 
   // Returns substring (page) that corresponds to page number
@@ -74,8 +74,8 @@ export class ArticleComponent implements OnInit {
     this.pageInOut = 'pageOut';
     this.currentPage = this._g.pageJump(newpage, this.currentPage, this.pageJumper.length);
 
-    setTimeout(()=>{
-      this.contentBox.nativeElement.innerHTML = 
+    setTimeout(() => {
+      this.contentBox.nativeElement.innerHTML =
       this.content.substring(
         this.pageJumper[this.currentPage - 1]['subStart'],
         this.pageJumper[this.currentPage - 1]['subEnd']).trim();
@@ -85,7 +85,7 @@ export class ArticleComponent implements OnInit {
         this.render.removeClass(this.contentBox.nativeElement, 'firstLetter');
       }
       this.pageInOut = 'pageIn';
-      }, 
+      },
       300);
 
     // Logging

@@ -8,7 +8,7 @@ export const pageInOutAnimation =
     transition('pageOut => pageIn', animate('300ms 100ms ease-out'))
   ]);
 
-export const pageLoadAnimation = 
+export const pageLoadAnimation =
   trigger('pageLoadAnimation', [
     transition(":enter", [
       style({ opacity: 0 }),
@@ -19,7 +19,7 @@ export const pageLoadAnimation =
       ])
   ]);
 
-export const articleAnimation = 
+export const articleAnimation =
   trigger('articleAnimation', [
     state('articleLoaded', style({'opacity': 1})),
     state('articleLoading', style({'opacity': 0})),

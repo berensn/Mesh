@@ -1,5 +1,5 @@
 /*
-  Retrives the list of articles from articles.json and displays them in a grid showing 
+  Retrives the list of articles from articles.json and displays them in a grid showing
   the first 100 words. When selected, a modal appears with the selected article displayed in it.
 */
 
@@ -41,16 +41,16 @@ export class FictionariumComponent implements OnInit {
   getArticles(): void {
     this.jsonService.getArticles(this._jsonUrl)
       .subscribe(data => {
-        this.jsonArticles = data;         
+        this.jsonArticles = data;
       });
   }
 
   // Opens modal with selected article as content. HTML template uses data.title, data.content, data.article as variables
-  onSelect(article: JsonFormat): void {  
+  onSelect(article: JsonFormat): void {
     let dialogRef = this.dialog.open(ModalComponentDialog, {
       width: '90%',
       data: { title: article.title, content: article.content, date: article.publishDate }
-    }); 
+    });
   }
 
   // Displays the first 100 words of an article
@@ -74,13 +74,13 @@ export class FictionariumComponent implements OnInit {
   animations: [pageInOutAnimation]
 })
 export class ModalComponentDialog {
-  
+
   // Variables
   public pageJumper: number[] = [];     // Array containing the list of page numbers [First, Prev, 1, 2, ...]
   public content;                       // Selected article from articles.json via paginator.ts
   public contentBox: ElementRef;        // DOM element to hold content
   private currentPage = 1;              // Set current page to 1
-  private pageList: any[] = [];         // Array containing the list of page numbers [First, Prev, 1, 2, ...]
+  public pageList: any[] = [];         // Array containing the list of page numbers [First, Prev, 1, 2, ...]
   pageInOut = 'pageIn';
 
   // Constructors
@@ -90,7 +90,7 @@ export class ModalComponentDialog {
   loc = this._g.loc;        // Location color
   item = this._g.item;      // Item color
   val = this._g.val;        // Value color
-  log = this._g.log;        // Logging on/off 
+  log = this._g.log;        // Logging on/off
 
   ngDoCheck(){
     // Subscribe to variables from transfer.service.ts
@@ -103,12 +103,12 @@ export class ModalComponentDialog {
   }
 
   // Returns substring (page) that corresponds to page number
-  jumpToPage(newpage){    
+  jumpToPage(newpage){
     this.pageInOut = 'pageOut';
     this.currentPage = this._g.pageJump(newpage, this.currentPage, this.pageJumper.length);
 
-    setTimeout(()=>{
-      this.contentBox.nativeElement.innerHTML = 
+    setTimeout(() => {
+      this.contentBox.nativeElement.innerHTML =
       this.content.substring(
         this.pageJumper[this.currentPage - 1]['subStart'],
         this.pageJumper[this.currentPage - 1]['subEnd']).trim();
@@ -118,7 +118,7 @@ export class ModalComponentDialog {
         this.render.removeClass(this.contentBox.nativeElement, 'firstLetter');
       }
       this.pageInOut = 'pageIn';
-      }, 
+      },
       300);
 
     // Logging

@@ -36,7 +36,7 @@ import {
   MatNativeDateModule,
   MatPaginatorModule,
   MatProgressBarModule,
-  MatProgressSpinnerModule, 
+  MatProgressSpinnerModule,
   MatRadioModule,
   MatRippleModule,
   MatSelectModule,
@@ -55,14 +55,14 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    AudioEffectsClick, 
+    AudioEffectsClick,
     AudioEffectsHover,
     ArticleComponent,
     DossierComponent,
     FictionariumComponent,
-    InfocastComponent,    
+    InfocastComponent,
     ModalComponentDialog,
-    Paginator,    
+    Paginator,
     PlexusComponent, NavComponent
   ],
   entryComponents: [
@@ -71,7 +71,7 @@ import {
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
-    BrowserModule,    
+    BrowserModule,
     HttpClientModule,
     MatDialogModule
   ],

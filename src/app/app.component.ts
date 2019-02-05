@@ -8,5 +8,5 @@ import { pageLoadAnimation } from './_lib/animations.page';
   animations: [pageLoadAnimation]
 })
 export class AppComponent {
-  title = 'Mesh';
+  title = 'Nathaniel Berens';
 }
