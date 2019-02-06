@@ -1,6 +1,6 @@
 export class Globals{
 
-  /* 
+  /*
     Format of console.log: (logging)(locText)(itemText)(valText) where
     logging: boolean,
     locText: filename/methodname,
@@ -13,14 +13,14 @@ export class Globals{
   // Variables
   private locText = [            // Console color for locText text
     'color: #00ff00'
-  ].join(';'); 
+  ].join(';');
   private itemText = [            // Console color for item text
     'color: #3f89d3'
   ].join(';');
   private valText = [             // Console color for value text
     'color: #3fd394'
   ].join(';');
-  private logging = true;         // Turn console logging on/off
+  private logging = false;         // Turn console logging on/off
 
   // Getters
   get loc(){                      // Getter for locText color

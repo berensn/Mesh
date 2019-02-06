@@ -1,8 +1,8 @@
 import {
+  AfterViewInit,
   Component,
   QueryList,
   ViewChildren,
-  AfterViewInit,
 } from '@angular/core';
 import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 import {
@@ -42,24 +42,23 @@ export class NavComponent implements AfterViewInit {
   infocastToolTip = 'inactive';
   plexusToolTip = 'inactive';
 
-  @ViewChildren('menuItem') private menuItems: QueryList<any>
+  @ViewChildren('menuItem') private menuItems: QueryList<any>;
 
   ngAfterViewInit(){
     this.setMenuItemPosition(this.menuItems);
   }
 
-  nodeWidth(selector, nodeList){
-    let element = nodeList.nativeElement.querySelectorAll(selector);
-    return element[0].naturalWidth;
-  }
 
   setMenuItemPosition(items){
     let angle = 0;
     let menuItemsArray = [];
     items.forEach(i => menuItemsArray.push(i));
     let radians = 0;
-    let radius = this.nodeWidth(".menuImg", menuItemsArray[0]);
-    let step = 90/(items.length + 1);
+    let radius = 100;
+    /*if (menuItemsArray[0].nativeElement.firstChild.firstChild.naturalWidth != 100){
+      radius = menuItemsArray[0].nativeElement.firstChild.firstChild.naturalWidth;
+    }*/
+    let step = 90 / (items.length + 1);
     let count = 1;
     let x = 0;
     let y = 0;
@@ -67,7 +66,7 @@ export class NavComponent implements AfterViewInit {
     items.forEach(i => {
       angle = angle + step;
       radians = angle * (Math.PI / 180);
-      if(count === 1 || count === 4){
+      if (count === 1 || count === 4){
         // Calculates positions of first and last elements on the arc
         x = Math.round(3.3 * radius * Math.cos(radians) + (radius / 3));
         y = Math.round(3.3 * radius * Math.sin(radians) + (radius / 3));

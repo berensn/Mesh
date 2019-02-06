@@ -89,14 +89,14 @@ export class Paginator implements AfterViewInit{
     let width = span.getBoundingClientRect().width;
     let height = span.getBoundingClientRect().height;
     this.render.removeChild(contentBox, span);
-    
+
     // Get window w/h and use char dimensions to calculate chars per row, num of rows, and total num of chars
     let windowHeight = window.innerHeight;
     let contentWidth = contentBox.nativeElement.getBoundingClientRect().width;
-    let numChar = Math.floor((contentWidth - 40)/(Math.ceil(width)));
-    let numLine = Math.floor(((windowHeight/(Math.ceil(height))) - 1));
+    let numChar = Math.floor((contentWidth - 40) / (Math.ceil(width)));
+    let numLine = Math.floor(((windowHeight / (Math.ceil(height))) - 1));
     this.pageLen = Math.floor((numChar * numLine) * 1.4);
-          
+
     // Insert first page content
     this.numPages = Math.ceil((this.contentLen / this.pageLen));
     this.avgPageSize = Math.floor(this.contentLen / this.numPages);
