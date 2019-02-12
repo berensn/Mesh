@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';   
+import { Routes, RouterModule } from '@angular/router';
 import { DossierComponent } from './dossier/dossier.component';
 import { FictionariumComponent } from './fictionarium/fictionarium.component';
 import { ArticleComponent } from './article/article.component';
@@ -30,7 +30,7 @@ const routes: Routes = [
     path: 'plexus',
     component: PlexusComponent
   }
-]; 
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
