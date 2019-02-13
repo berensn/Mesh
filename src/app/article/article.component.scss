@@ -37,7 +37,7 @@ ul{
 #article{
     @include textFont();
     background-color: $articleBG;
-    border: 1px solid $border;
+    //border: 1px solid $border;
     margin: 50px auto auto;
     padding-top: 25px;
     padding-bottom: 20px;
