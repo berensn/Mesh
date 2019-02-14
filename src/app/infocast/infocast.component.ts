@@ -12,22 +12,21 @@ import { JsonService } from '../_lib/service.json';
 export class InfocastComponent implements OnInit {
 
   // Variables
-  public jsonInfocasts = [];           // Array of news from infocast.json
-  private _jsonUrl: string = "../assets/data/infocast.json";    // Url of infocast.json file
-
+  public jsonInfocasts = [];
+  private _jsonUrl: string = '../cockpit/api/collections/get/News?token=b54bd207c7ff89454a03d17f810cb5';
   // Constructors
-  constructor(private jsonService: JsonService) { }
+  constructor(private jsonService: JsonService) {}
 
   // Methods
   ngOnInit() {
     this.getInfocast();
   }
 
-  // Gets infocasts via [article.service.ts][getInfocast()]
   getInfocast(): void {
     this.jsonService.getInfocast(this._jsonUrl)
       .subscribe(data => {
-        this.jsonInfocasts = data;
+        this.jsonInfocasts = data,
+        console.log(this.jsonInfocasts);
       });
   }
 }

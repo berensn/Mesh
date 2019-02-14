@@ -1,7 +1,3 @@
-/*
-  Creates a service to retrieve data from json files.
-*/
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JsonFormat } from './json.format';

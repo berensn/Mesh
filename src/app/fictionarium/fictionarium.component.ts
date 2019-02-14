@@ -1,8 +1,3 @@
-/*
-  Retrives the list of articles from articles.json and displays them in a grid showing
-  the first 100 words. When selected, a modal appears with the selected article displayed in it.
-*/
-
 import { Component, OnInit, Inject, ElementRef, ChangeDetectorRef, Renderer2 } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { pageInOutAnimation, pageLoadAnimation } from '../_lib/animations.page';
@@ -22,8 +17,8 @@ import { TransferService } from '../_lib/service.transfer';
 export class FictionariumComponent implements OnInit {
 
   // Variables
-  public jsonArticles = [];       // Array to hold articles from articles.json
-  private _jsonUrl: string = "../assets/data/articles.json";      // URL of articles.json file
+  public jsonArticles = [];
+  private _jsonUrl: string = '../cockpit/api/collections/get/Content?token=33ea141ab00269a1e071e4ee66c1c1';
 
   // Constructors
   constructor(private jsonService: JsonService, public dialog: MatDialog) { }
@@ -49,7 +44,7 @@ export class FictionariumComponent implements OnInit {
   onSelect(article: JsonFormat): void {
     let dialogRef = this.dialog.open(ModalComponentDialog, {
       width: '90%',
-      data: { title: article.title, content: article.content, date: article.publishDate }
+      data: { title: article.title, content: article.content, date: article._created }
     });
   }
 

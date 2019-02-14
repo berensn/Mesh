@@ -1,7 +1,3 @@
-/*
-  Retrieves article list from articles.json and displays the first one
-*/
-
 import { Component, OnInit, ChangeDetectorRef, ElementRef, Renderer2 } from '@angular/core';
 import { articleAnimation, pageInOutAnimation, pageLoadAnimation } from '../_lib/animations.page';
 import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
@@ -26,7 +22,7 @@ export class ArticleComponent implements OnInit {
   public contentBox: ElementRef;      // DOM element to hold content
   private currentPage = 1;            // Set current page to 1
   public pageList: any[] = [];       // Array containing the list of page numbers [First, Prev, 1, 2, ...]
-  private _jsonUrl: string = "../assets/data/articles.json";    // Url of articles.json file
+  private _jsonUrl: string = '../cockpit/api/collections/get/Content?token=33ea141ab00269a1e071e4ee66c1c1';
   articleState = 'articleLoading';
   pageInOut = 'pageIn';
 
@@ -65,7 +61,8 @@ export class ArticleComponent implements OnInit {
   getArticles(): void {
     this.jsonService.getArticles(this._jsonUrl)
       .subscribe(data => {
-        this.jsonArticles = data;
+        this.jsonArticles = data,
+        console.log(this.jsonArticles);
       });
   }
 

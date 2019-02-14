@@ -20,7 +20,7 @@ export class Globals{
   private valText = [             // Console color for value text
     'color: #3fd394'
   ].join(';');
-  private logging = false;         // Turn console logging on/off
+  private logging = true;         // Turn console logging on/off
 
   // Getters
   get loc(){                      // Getter for locText color

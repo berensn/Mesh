@@ -1,11 +1,35 @@
-﻿// Entry format of json files
+﻿/*export interface JsonFormat {
+    id: number;
+    author: string;
+    title: string;
+    content: string;
+    tags: string[];
+    categories: string[];
+    publishDate: string;
+    published: boolean;
+}*/
+
 export interface JsonFormat {
-    id: number;             // Entry ID number (primary key)
-    author: string;         // Entry author
-    title: string;          // Entry title
-    content: string;        // Entry
-    tags: string[];         // Entry tags
-    categories: string[];   // Entry categories
-    publishDate: string;    // Entry published date
-    published: boolean;     // Flag that determines whether to display entry or not
+    title: string;
+    author: {
+        _id: string;
+        link: string;
+        display: string;
+    };
+    image: {
+        path: string;
+    };
+    content: string;
+    tags: string[];
+    categories: {
+        _id: string;
+        link: string;
+        display: string
+    };
+    published: boolean;
+    _mby: string;
+    _by: string;
+    _modified: number;
+    _created: number;
+    _id: string;
 }
