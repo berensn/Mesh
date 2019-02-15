@@ -12,8 +12,8 @@ import { JsonService } from '../_lib/service.json';
 export class InfocastComponent implements OnInit {
 
   // Variables
-  public jsonInfocasts = [];
-  private _jsonUrl: string = '../cockpit/api/collections/get/News?token=b54bd207c7ff89454a03d17f810cb5';
+  public jsonInfocasts;
+  private _jsonUrl: string = 'https://berens.ink/cockpit/api/collections/get/News?token=b54bd207c7ff89454a03d17f810cb5';
   // Constructors
   constructor(private jsonService: JsonService) {}
 
@@ -25,7 +25,7 @@ export class InfocastComponent implements OnInit {
   getInfocast(): void {
     this.jsonService.getInfocast(this._jsonUrl)
       .subscribe(data => {
-        this.jsonInfocasts = data,
+        this.jsonInfocasts = data['entries'],
         console.log(this.jsonInfocasts);
       });
   }
