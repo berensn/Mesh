@@ -6,7 +6,7 @@
             audioEffectsHover
             audioEffectsClick>
             <span class = 'title'>{{ jsonArticle.title }}</span><br/>
-            <span class="date">{{ jsonArticle.publishDate | date:'fullDate'}}</span><br/><br/>
+            <span class="date">{{ jsonArticle._created | date:'fullDate'}}</span><br/><br/>
             <div class= "introBit" [innerHTML] = "introArticle(jsonArticle.content)"></div>
         </li>
     </ul>
