@@ -22,7 +22,8 @@ export class ArticleComponent implements OnInit {
   public contentBox: ElementRef;      // DOM element to hold content
   private currentPage = 1;            // Set current page to 1
   public pageList: any[] = [];       // Array containing the list of page numbers [First, Prev, 1, 2, ...]
-  private _jsonUrl: string = 'https://berens.ink/cockpit/api/collections/get/Content?token=33ea141ab00269a1e071e4ee66c1c1';
+  //private _jsonUrl: string = 'https://berens.ink/cockpit/api/collections/get/Content?token=33ea141ab00269a1e071e4ee66c1c1';
+  private _jsonUrl: string = '../cockpit/api/collections/get/Content?token=33ea141ab00269a1e071e4ee66c1c1';
   articleState = 'articleLoading';
   pageInOut = 'pageIn';
 

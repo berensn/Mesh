@@ -1,7 +1,3 @@
-/*
-  Creates Observables components subscribe to so paginator.ts can pass data from it to them
-*/
-
 import { Injectable, ElementRef } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 

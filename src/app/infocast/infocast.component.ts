@@ -13,7 +13,8 @@ export class InfocastComponent implements OnInit {
 
   // Variables
   public jsonInfocasts;
-  private _jsonUrl: string = 'https://berens.ink/cockpit/api/collections/get/News?token=b54bd207c7ff89454a03d17f810cb5';
+  //private _jsonUrl: string = 'https://berens.ink/cockpit/api/collections/get/News?token=b54bd207c7ff89454a03d17f810cb5';
+  private _jsonUrl: string = '../cockpit/api/collections/get/News?token=b54bd207c7ff89454a03d17f810cb5';
   // Constructors
   constructor(private jsonService: JsonService) {}
 
