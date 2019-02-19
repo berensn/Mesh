@@ -2,7 +2,7 @@
     <ng-container *ngFor = "let jsonArticle of jsonArticles; let index = index">
         <ng-container *ngIf = "index == 0">
             <span class="aTitle">{{ jsonArticle.title }}</span><br/>
-            <span class ="aDate">{{ jsonArticle._created | date:'fullDate' }}</span><br/> 
+            <span class ="aDate">{{ (jsonArticle._created | amFromUnix) | amDateFormat:'dddd, LL' }}</span><br/> 
             <div id= "pageContent" 
                 [paginator]= "jsonArticle.content"
                 [@pageInOutAnimation]="pageInOut"></div>     

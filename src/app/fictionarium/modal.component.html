@@ -1,6 +1,6 @@
 <div *ngIf="data">
     <span class="aTitle">{{ data.title }}</span><br/>
-    <span class="aDate">{{ data.date | date:'fullDate' }}</span><br/>
+    <span class="aDate">{{ (data.date | amFromUnix) | amDateFormat:'dddd, LL' }}</span><br/>
     <div id="modalContent" 
          [paginator]= "data.content"
          [@pageInOutAnimation]="pageInOut"></div>

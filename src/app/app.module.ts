@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MomentModule } from 'ngx-moment';
 
 import { ArticleComponent } from './article/article.component';
 import { DossierComponent } from './dossier/dossier.component';
@@ -75,6 +76,7 @@ import {
     BrowserModule,
     HttpClientModule,
     MatDialogModule,
+    MomentModule,
     RouterModule
   ],
   providers: [ Globals, JsonService, TransferService],

@@ -6,7 +6,7 @@
             audioEffectsHover
             audioEffectsClick>
             <span class = 'title'>{{ jsonInfocast.title }}</span><br/>
-            <span class="date">{{ jsonInfocast._created | date:'fullDate'}}</span><br/><br/>
+            <span class="date">{{ (jsonInfocast._created | amFromUnix) | amDateFormat:'dddd, LL' }}</span><br/><br/>
             <div class="introBit" [innerHTML] = "jsonInfocast.content"></div>
         </li>
     </ul>
