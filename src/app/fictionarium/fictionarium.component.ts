@@ -18,8 +18,8 @@ export class FictionariumComponent implements OnInit {
 
   // Variables
   public jsonArticles;
-  //private _jsonUrl: string = 'https://berens.ink/cockpit/api/collections/get/Content?token=33ea141ab00269a1e071e4ee66c1c1';
-  private _jsonUrl: string = '../cockpit/api/collections/get/Content?token=33ea141ab00269a1e071e4ee66c1c1';
+  private _jsonUrl: string = 'https://berens.ink/cockpit/api/collections/get/Content?token=33ea141ab00269a1e071e4ee66c1c1';
+  //private _jsonUrl: string = '../cockpit/api/collections/get/Content?token=33ea141ab00269a1e071e4ee66c1c1';
 
   // Constructors
   constructor(private jsonService: JsonService, public dialog: MatDialog) { }
