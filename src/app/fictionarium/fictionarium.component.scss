@@ -32,9 +32,14 @@ li{
 
 .fictionarium{
     @include flexLayout;
-    @include pageBg();  
+    @include pageBg();
+		flex: 1;	
+    flex-direction: column;
     margin: 50px auto auto;
-
+		max-height: 90vh;
+		min-height: 0;
+		overflow: auto;
+		padding-bottom: 20px;
 }
 
 .introBit{  
@@ -45,4 +50,8 @@ li{
 .title{
     @include titleFont();
     line-height: .9em;
+}
+
+.spacer{
+	min-height: 20px;
 }
