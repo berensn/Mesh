@@ -1,4 +1,5 @@
-<div class= 'fictionarium' @pageLoadAnimation>
+<div class = 'fictionarium' @pageLoadAnimation>
+	<div class = 'fictionarium-inner'>
     <div><span class="cardCat">Fictionarium</span></div>
     <ul class = 'article'>
         <li *ngFor = "let jsonArticle of jsonArticles"
@@ -10,5 +11,5 @@
             <div class= "introBit" [innerHTML] = "introArticle(jsonArticle.content)"></div>
         </li>
     </ul>
-	<div class="spacer">&nbsp;</div>
+	</div>
 </div>

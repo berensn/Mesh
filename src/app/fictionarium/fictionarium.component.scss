@@ -33,13 +33,16 @@ li{
 .fictionarium{
     @include flexLayout;
     @include pageBg();
-		flex: 1;	
-    flex-direction: column;
+		flex: 1;
     margin: 50px auto auto;
 		max-height: 90vh;
 		min-height: 0;
 		overflow: auto;
-		padding-bottom: 20px;
+}
+
+.fictionarium-inner{
+	  @include flexLayout;
+    margin: 0 auto auto;
 }
 
 .introBit{  
