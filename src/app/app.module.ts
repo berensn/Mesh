@@ -8,9 +8,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MomentModule } from 'ngx-moment';
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
-import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 import { ArticleComponent } from './article/article.component';
 import { DossierComponent } from './dossier/dossier.component';
@@ -24,11 +22,6 @@ import { Paginator } from './_lib/paginator';
 import { PlexusComponent } from './plexus/plexus.component';
 import { TransferService } from './_lib/service.transfer';
 
-
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
-};
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,8 +32,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FictionariumComponent,
     InfocastComponent,
     ModalComponentDialog,
+    NavComponent,
     Paginator,
-    PlexusComponent, NavComponent
+    PlexusComponent
   ],
   entryComponents: [
     ModalComponentDialog
@@ -53,10 +47,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientModule,
     MatDialogModule,
     MomentModule,
-    PerfectScrollbarModule,
+    NgScrollbarModule,
     RouterModule
   ],
-  providers: [ Globals, JsonService, TransferService, { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG } ],
+  providers: [ Globals, JsonService, TransferService ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

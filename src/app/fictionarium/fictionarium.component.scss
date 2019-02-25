@@ -1,5 +1,9 @@
 @import '../../assets/css/mixins.scss';
 
+/deep/ {
+	@import '../../assets/css/perfect-scrollbar.css';
+}
+
 li{
     background-color: $cardBgColor;
     border: 2px solid transparent;
@@ -42,7 +46,7 @@ ul{
     margin: 50px auto auto;
     height: 90vh;
     min-height: 0;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .fictionarium-inner{
@@ -53,10 +57,6 @@ ul{
 .introBit{  
     @include textFont();
     @include firstLetter();    
-}
-
-.ps_rail-y{
-    display: none !important;
 }
 
 .title{
