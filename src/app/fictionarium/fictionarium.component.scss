@@ -7,12 +7,17 @@ li{
     display: inline;
     float: left;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding: 10px;
     position: relative;   
     width: 20%;
     &:hover{
         border-color: $red;
     }    
+}
+
+ul{
+    margin-bottom: 10px;
 }
 
 .article{
@@ -26,22 +31,22 @@ li{
 
 .date{
     color: $textColor;
-		float: right;
+    float: right;
     font-weight: 600;    
 }
 
 .fictionarium{
     @include flexLayout;
     @include pageBg();
-		flex: 1;
+    flex: 1;
     margin: 50px auto auto;
-		max-height: 90vh;
-		min-height: 0;
-		overflow: auto;
+    height: 90vh;
+    min-height: 0;
+    overflow: auto;
 }
 
 .fictionarium-inner{
-	  @include flexLayout;
+    @include flexLayout;
     margin: 0 auto auto;
 }
 
@@ -50,11 +55,15 @@ li{
     @include firstLetter();    
 }
 
+.ps_rail-y{
+    display: none !important;
+}
+
 .title{
     @include titleFont();
     line-height: .9em;
 }
 
 .spacer{
-	min-height: 20px;
+	min-height: 100px;
 }

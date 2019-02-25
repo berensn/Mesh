@@ -7,6 +7,7 @@ import { JsonFormat } from '../_lib/json.format';
 import { Paginator } from '../_lib/paginator';
 import { JsonService } from '../_lib/service.json';
 import { TransferService } from '../_lib/service.transfer';
+import { PerfectScrollbarConfigInterface, PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
 
 @Component({
   selector: 'app-fictionarium',

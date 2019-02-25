@@ -1,6 +1,6 @@
-<div class= 'infocast' @pageLoadAnimation>
+<div class= 'infocast' fxLayoutAlign = "space-around" @pageLoadAnimation>
     <div><span class="cardCat">Infocast</span></div>
-    <ul class = 'info'>
+    <ul class = 'info' fxLayoutAlign = "space-around">
         <li *ngFor = "let jsonInfocast of jsonInfocasts"
             (click)="onSelect(jsonInfocast)"
             audioEffectsHover

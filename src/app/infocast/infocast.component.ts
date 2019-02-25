@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { pageLoadAnimation } from '../_lib/animations.page';
 import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 import { JsonService } from '../_lib/service.json';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-infocast',
@@ -27,7 +28,14 @@ export class InfocastComponent implements OnInit {
     this.jsonService.getInfocast(this._jsonUrl)
       .subscribe(data => {
         this.jsonInfocasts = data['entries'],
-        console.log(this.jsonInfocasts);
+        console.log(this.jsonInfocasts[0]._created);
       });
+  }
+
+  dateConvert(timestamp){
+    console.log(timestamp);
+    let ts = new Date(timestamp); //EEEE, MMMM d, y
+    console.log(ts);
+    return ts;
   }
 }

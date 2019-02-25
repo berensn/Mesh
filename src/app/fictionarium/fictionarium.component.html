@@ -1,15 +1,15 @@
-<div class = 'fictionarium' @pageLoadAnimation>
-	<div class = 'fictionarium-inner'>
-    <div><span class="cardCat">Fictionarium</span></div>
-    <ul class = 'article'>
-        <li *ngFor = "let jsonArticle of jsonArticles"
-            (click)="onSelect(jsonArticle)"
-            audioEffectsHover
-            audioEffectsClick>
-            <span class = 'title'>{{ jsonArticle.title }}</span><br/>
-            <span class="date">{{ (jsonArticle._created | amFromUnix) | amDateFormat:'dddd, LL' }}</span><br/><br/>
-            <div class= "introBit" [innerHTML] = "introArticle(jsonArticle.content)"></div>
-        </li>
-    </ul>
-	</div>
+<div @pageLoadAnimation>
+    <perfect-scrollbar class = 'fictionarium ps' fxLayoutAlign="space-around" [config]="config">
+        <div><span class="cardCat">Fictionarium</span></div>
+        <ul class = 'article' fxLayoutAlign="space-around">
+            <li *ngFor = "let jsonArticle of jsonArticles"
+                (click)="onSelect(jsonArticle)"
+                audioEffectsHover
+                audioEffectsClick>
+                <span class = 'title'>{{ jsonArticle.title }}</span><br/>
+                <span class="date">{{ (jsonArticle._created | amFromUnix) | amDateFormat:'dddd, LL' }}</span><br/><br/>
+                <div class= "introBit" [innerHTML] = "introArticle(jsonArticle.content)"></div>
+            </li>
+        </ul>
+    </perfect-scrollbar>
 </div>
