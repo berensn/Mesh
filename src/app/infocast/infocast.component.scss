@@ -29,6 +29,7 @@ li{
 .info{
     @include flexLayout; 
     flex-wrap: wrap;
+		//margin:auto;
 }
 
 .introBit{
