@@ -1,6 +1,6 @@
 <div @pageLoadAnimation>
     <ng-scrollbar class='fictionarium scrollinator' fxLayoutAlign="space-around">
-        <img src="../../assets/img/fictionarium.png" /><div class="cardCatContainer"><span class="cardCat">Fictionarium</span></div>
+        <img class="pageIcon" src="../../assets/img/fictionarium.png" /><div class="cardCatContainer"><span class="cardCat">Fictionarium</span></div>
         <ul class='article' fxLayoutAlign="space-around">
             <li *ngFor = "let jsonArticle of jsonArticles"
                 (click)="onSelect(jsonArticle)"

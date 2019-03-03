@@ -43,6 +43,10 @@ li{
     margin: 50px auto auto;
 }
 
+.pageIcon{
+		@include pageIcon();
+}
+
 .title{
     @include titleFont();
     float: left;

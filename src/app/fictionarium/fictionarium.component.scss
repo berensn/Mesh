@@ -61,6 +61,14 @@ ul{
     @include firstLetter();    
 }
 
+.pageHeader{
+		text-align: center;
+}
+
+.pageIcon{
+		@include pageIcon();
+}
+
 .title{
     @include titleFont();
     line-height: .9em;

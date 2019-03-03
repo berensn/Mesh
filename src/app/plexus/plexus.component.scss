@@ -32,12 +32,7 @@ hr{
 }
 
 .cardCat{
-    color: $titleColor;
-    font-size: 2.3em;
-    font-weight: 800;
-    margin: 10px 0;
-    transform: rotate(180deg);
-    writing-mode: vertical-rl;
+		@include pageTitle;
 }
 
 .cardDesc{
@@ -50,6 +45,15 @@ hr{
 
 .cardTitle{
     @include titleFont();
+}
+
+.pageHeader{
+		margin: auto;
+		text-align: center;
+}
+
+.pageIcon{
+		@include pageIcon();
 }
 
 .plexusLayout{
