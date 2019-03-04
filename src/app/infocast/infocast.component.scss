@@ -29,7 +29,7 @@ li{
 .info{
     @include flexLayout; 
     flex-wrap: wrap;
-		//margin:auto;
+		margin:auto;
 }
 
 .introBit{
@@ -43,8 +43,14 @@ li{
     margin: 50px auto auto;
 }
 
+.pageHeader{
+		margin: auto;
+		text-align: center;
+}
+
 .pageIcon{
 		@include pageIcon();
+		margin: auto;
 }
 
 .title{

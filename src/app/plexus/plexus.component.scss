@@ -1,11 +1,6 @@
 @import '../../assets/css/mixins.scss';
 
-hr{
-    background-color: $red;
-    border: 1px solid $red;
-    height: 1px;
-    width: 70%;
-}
+
 
 .card{
     background-color: $cardBgColor;
@@ -54,6 +49,7 @@ hr{
 
 .pageIcon{
 		@include pageIcon();
+		margin: auto;
 }
 
 .plexusLayout{
@@ -64,7 +60,8 @@ hr{
 }
 
 .visualArts{
-    display: flex;
+    display: flex;		
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: auto;
     width: 95%;
@@ -74,8 +71,8 @@ hr{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 95%;
     margin: auto;
+    width: 95%;
 }
 
 #plexusLayout{

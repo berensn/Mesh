@@ -31,10 +31,6 @@ ul{
     @include pageTitle;
 }
 
-.cardCatContainer{
-	width: 10%;
-}
-
 .date{
     color: $textColor;
     float: right;
@@ -44,16 +40,14 @@ ul{
 .fictionarium{
     @include flexLayout;
     @include pageBg();
+	  display: flex;
+		flex-direction: column;
+    justify-content: space-around;
     flex: 1;
     margin: 50px auto auto;
     height: 90vh;
     min-height: 0;
     overflow: hidden;
-}
-
-.fictionarium-inner{
-    @include flexLayout;
-    margin: 0 auto auto;
 }
 
 .introBit{  
@@ -62,11 +56,13 @@ ul{
 }
 
 .pageHeader{
+		margin: auto;
 		text-align: center;
 }
 
 .pageIcon{
 		@include pageIcon();
+		margin: auto;
 }
 
 .title{

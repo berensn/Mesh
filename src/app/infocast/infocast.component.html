@@ -1,6 +1,10 @@
-<div class= 'infocast' fxLayoutAlign = "space-around" @pageLoadAnimation>
-    <div><img class="pageIcon" src="../../assets/img/infocast.png" /><span class="cardCat">Infocast</span></div>
-    <ul class = 'info' fxLayoutAlign = "space-around">
+<div class= 'infocast' fxLayoutAlign = "space-around" fxLayout="column" @pageLoadAnimation>
+    <div class="pageHeader" fxLayoutAlign="space-around" fxLayout="column">
+			<img class="pageIcon" src="../../assets/img/infocast.png" />
+			<span class="cardCat">Infocast</span>
+			<hr/>
+		</div>
+    <ul class='info' fxLayoutAlign="space-around">
         <li *ngFor = "let jsonInfocast of jsonInfocasts"
             (click)="onSelect(jsonInfocast)"
             audioEffectsHover

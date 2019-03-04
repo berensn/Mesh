@@ -1,15 +1,21 @@
 <div @pageLoadAnimation>
-    <ng-scrollbar class='fictionarium scrollinator' fxLayoutAlign="space-around">
-        <img class="pageIcon" src="../../assets/img/fictionarium.png" /><div class="cardCatContainer"><span class="cardCat">Fictionarium</span></div>
-        <ul class='article' fxLayoutAlign="space-around">
-            <li *ngFor = "let jsonArticle of jsonArticles"
-                (click)="onSelect(jsonArticle)"
-                audioEffectsHover
-                audioEffectsClick>
-                <span class='title'>{{ jsonArticle.title }}</span><br/>
-                <span class="date">{{ (jsonArticle._created | amFromUnix) | amDateFormat:'dddd, LL' }}</span><br/><br/>
-                <div class="introBit" [innerHTML]="introArticle(jsonArticle.content)"></div>
-            </li>
-        </ul>
+    <ng-scrollbar class='fictionarium scrollinator' fxLayoutAlign="space-around" fxLayout="column">
+			<div fxLayoutAlign="space-around" fxLayout="column">
+        <div class="pageHeader" fxLayoutAlign="space-around" fxLayout="column">
+					<img class="pageIcon" 	src="../../assets/img/fictionarium.png" />
+					<span class="cardCat">Fictionarium</span>
+					<hr/>
+				</div>
+			</div>
+			<ul class='article' fxLayoutAlign="space-around">
+					<li *ngFor = "let jsonArticle of jsonArticles"
+							(click)="onSelect(jsonArticle)"
+							audioEffectsHover
+							audioEffectsClick>
+							<span class='title'>{{ jsonArticle.title }}</span><br/>
+							<span class="date">{{ (jsonArticle._created | amFromUnix) | amDateFormat:'dddd, LL' }}</span><br/><br/>
+							<div class="introBit" [innerHTML]="introArticle(jsonArticle.content)"></div>
+					</li>
+			</ul>
     </ng-scrollbar>
 </div>
