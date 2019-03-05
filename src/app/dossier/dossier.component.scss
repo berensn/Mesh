@@ -4,20 +4,24 @@
     @include pageTitle;
 }
 
-.dossier{   
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-    padding: 10px;
-    width: 60%;
-}
-
 .dossierInner{    
     @include flexLayout;    
     margin: auto;
 }
 
-#dossierLayout{
+.dossierLayout{
     @include flexLayout;
+    @include pageBg();
+    align-items: flex-start;
     margin: 50px auto auto;
+}
+
+.pageHeader{
+		margin: auto;
+		text-align: center;
+}
+
+.pageIcon{
+		@include pageIcon();
+		margin: auto;
 }
