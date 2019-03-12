@@ -17,11 +17,11 @@
 }
 
 .pageHeader{
-		margin: auto;
-		text-align: center;
+    margin: 0px auto;
+    text-align: center;
 }
 
 .pageIcon{
-		@include pageIcon();
-		margin: auto;
+    @include pageIcon();
+    margin: auto;
 }
