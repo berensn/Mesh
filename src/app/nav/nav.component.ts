@@ -96,7 +96,6 @@ export class NavComponent implements AfterViewInit {
 
   menuItemEnter(e){
     this.menuRoot = 'active';
-
     switch (e){
       case 'dossier': {
         this.dossierToolTip = 'active';
