@@ -3,7 +3,6 @@ This is a CMS/Blog project built in Angular.
 
 # Progress
 
-Front end: 97% 
+Front end: 99% 
 
-Back end: 1%
 
