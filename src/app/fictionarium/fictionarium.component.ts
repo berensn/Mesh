@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject, ElementRef, ChangeDetectorRef, Renderer2 } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { pageInOutAnimation, pageLoadAnimation } from '../_lib/animations.page';
 import { AudioEffectsClick, AudioEffectsHover } from '../_lib/audio.effects';
 import { Globals } from '../_lib/globals';
