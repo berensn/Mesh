@@ -13,7 +13,8 @@
                  audioEffectsHover
                  audioEffectsClick
                  [@menuAnimation]="menuRoot"
-                 (mouseenter)="menuItemEnter('dossier')" (mouseleave)="menuItemLeave('dossier')"/>
+                 (mouseenter)="menuItemEnter('dossier')" 
+								 (mouseleave)="menuItemLeave('dossier')"/>
         </a>
         <div class="tooltip" id='dossier' #dossier [@dossierToolTipAnimation]="dossierToolTip">Dossier</div>
     </li>
@@ -33,7 +34,8 @@
                  audioEffectsHover
                  audioEffectsClick 
                  [@menuAnimation]="menuRoot"
-                 (mouseenter)="menuItemEnter('plexus')" (mouseleave)="menuItemLeave('plexus')"/>
+                 (mouseenter)="menuItemEnter('plexus')" 
+								 (mouseleave)="menuItemLeave('plexus')"/>
         </a>
         <div class="tooltip" id='plexus' #plexus [@plexusToolTipAnimation]="plexusToolTip">Plexus</div>
     </li>
@@ -43,7 +45,8 @@
                  audioEffectsHover
                  audioEffectsClick 
                  [@menuAnimation]="menuRoot"
-                 (mouseenter)="menuItemEnter('infocast')" (mouseleave)="menuItemLeave('infocast')"/>
+                 (mouseenter)="menuItemEnter('infocast')" 
+								 (mouseleave)="menuItemLeave('infocast')"/>
         </a>
         <div class="tooltip" id='infocast' #infocast [@infocastToolTipAnimation]="infocastToolTip">Infocast</div>
     </li>

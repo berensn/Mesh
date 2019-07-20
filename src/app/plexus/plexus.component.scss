@@ -3,8 +3,8 @@
 
 
 .card{
-    background-color: $cardBgColor;
-    //border: 2px solid $border;
+    background-color: $cardBgColor;    
+    border: 2px solid transparent;
     border-radius: 3px 0px;
     float: left;
     margin-top: 10px;

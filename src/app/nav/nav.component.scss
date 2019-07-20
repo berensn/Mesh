@@ -1,92 +1,93 @@
 @import '../../assets/css/mixins.scss';
 
 :host{
-    color: $textColor;
-    z-index: 9001;
+	color: $textColor;
+	z-index: 9001;
 }
 
 .menuImg{
-    border-radius: 50%;
-    border: 1px solid $border;
-    &:hover{
-        border-color: $red;
-    }
+	border-radius: 50%;
+	border: 1px solid $border;
+	&:hover{
+			border-color: $red;
+	}
 }
 
 .menuItem{
-    z-index: 9001;
+	z-index: 9001;
 }
 
 .tooltip{
 	background: $bgColor;
-    border: 1px solid $border;
+	border: 1px solid $border;
 	color: $textColor;
-    display: inline-block;
-    padding: 3px;
+	display: inline;
+	opacity: 0;
+	padding: 3px;
 	text-align: center;
 }
 
 #copyright{
-    display: inline;
-    font-size: .8em;
-    margin: auto;
+	display: inline;
+	font-size: .8em;
+	margin: auto;
 }
 
 #disclaimerContainer{
-    padding: 10px;
-    width: 600px;
-    img{
-        float: left;
-        width: 100px;
-        padding-right: 15px;
-    }
+	padding: 10px;
+	width: 600px;
+	img{
+			float: left;
+			width: 100px;
+			padding-right: 15px;
+	}
 }
 
 #infoBoxContainer{    
-    background-image: url('../../assets/img/bg_titleContainer.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    border: 1px solid $red;
-    color: $textColor;
-    display: flex;
-    flex-direction: column;
-    height: 80vh;
-    justify-content: flex-end;
-    left: calc(50% - 350px);
-    position: fixed;
-    top: 40px;
-    z-index: 9001;
+	background-image: url('../../assets/img/bg_titleContainer.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border: 1px solid $red;
+	color: $textColor;
+	display: flex;
+	flex-direction: column;
+	height: 80vh;
+	justify-content: flex-end;
+	left: calc(50% - 350px);
+	position: fixed;
+	top: 40px;
+	z-index: 9001;
 }
 
 #infoBoxFoot{
 	background: rgba(0, 0, 0, .35);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-bottom: 10px;
 }
 
 #infoBoxTrigger{
-    background: $bgColor;
-    border-radius: 50%;
-    border: 1px solid $border;
-    width: 30px;
+	background: $bgColor;
+	border-radius: 50%;
+	border: 1px solid $border;
+	width: 30px;
 }
 
 #infoBoxTriggerContainer{
-    position: fixed;
-    top: 30px;
-    left: 200px;
-    z-index: 9001;
+	position: fixed;
+	top: 30px;
+	left: 200px;
+	z-index: 9001;
 }
 
 #menuRoot{
-    border: 1px solid $border;
-    border-radius: 50%;
-    left: 30px;
-    opacity: .4;
-    padding: -10px;
-    position: absolute;
-    top: 30px;
-    z-index: 9001;
+	border: 1px solid $border;
+	border-radius: 50%;
+	left: 30px;
+	opacity: .4;
+	padding: -10px;
+	position: absolute;
+	top: 30px;
+	z-index: 9001;
 }
