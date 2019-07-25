@@ -38,7 +38,6 @@
     "ngx-scrollbar": "^4.2.0",
     "npm": "^6.10.0",
     "pixi.js": "^4.8.8",
-    "pri-ng-scrollbar": "^3.0.1",
     "rxjs": "^6.5.2",
     "rxjs-compat": "^6.5.2",
     "rxjs-tslint": "^0.1.7",
