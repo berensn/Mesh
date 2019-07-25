@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MomentModule } from 'ngx-moment';
 import { NgScrollbarModule } from 'ngx-scrollbar';
-import { PriScrollbarModule } from 'pri-ng-scrollbar';
 
 import { ArticleComponent } from './article/article.component';
 import { DossierComponent } from './dossier/dossier.component';
@@ -49,7 +48,6 @@ import { TransferService } from './_lib/service.transfer';
     MatDialogModule,
     MomentModule,
     NgScrollbarModule,
-    PriScrollbarModule,
     RouterModule
   ],
   providers: [ Globals, JsonService, TransferService ],
