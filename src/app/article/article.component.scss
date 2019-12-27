@@ -26,12 +26,12 @@ ul{
     @include aTitle();
 }
 
-.firstLetter{
-    @include firstLetter();
-}
-
 .aDate{
     @include aDate();
+}
+
+.firstLetter{
+	@include firstLetter();
 }
 
 #article{
@@ -49,7 +49,8 @@ ul{
     columns: 2 39vw;
     column-gap: 40px;
     column-rule: 2px solid $firstLetter;
-    display: inline-block;
+    display: inline-block !important;
+		margin: 0px 2.5%;
     max-height: 90vh;
     max-width: 100vw;
     padding: 10px 0px 10px 0px;    

@@ -1,17 +1,19 @@
-<div class= 'infocast' fxLayoutAlign = "space-around" fxLayout="column" @pageLoadAnimation>
-    <div class="pageHeader" fxLayoutAlign="space-around" fxLayout="column">
+<div class= 'infocast' @pageLoadAnimation>
+  <div fxLayoutAlign="space-around" fxLayout="column">  
+		<div class="pageHeader" fxLayoutAlign="space-around" fxLayout="column">
 			<img class="pageIcon" src="../../assets/img/infocast.png" />
 			<span class="cardCat">Infocast</span>
 			<hr/>
 		</div>
-    <ul class='info' fxLayoutAlign="space-around">
-        <li *ngFor = "let jsonInfocast of jsonInfocasts"
-            (click)="onSelect(jsonInfocast)"
-            audioEffectsHover
-            audioEffectsClick>
-            <span class = 'title'>{{ jsonInfocast.title }}</span><br/>
-            <span class="date">{{ (jsonInfocast._created | amFromUnix) | amDateFormat:'dddd, LL' }}</span><br/><br/>
-            <div class="introBit" [innerHTML] = "jsonInfocast.content"></div>
-        </li>
-    </ul>
+	</div>
+	<ul class='info' fxLayoutAlign="space-around" fxFlexAlign="top">
+		<li *ngFor = "let jsonInfocast of jsonInfocasts"
+			(click)="onSelect(jsonInfocast)"
+			audioEffectsHover
+			audioEffectsClick>
+			<span class = 'title'>{{ jsonInfocast.title }}</span><br/>
+			<span class="date">{{ (jsonInfocast._created | amFromUnix) | amDateFormat:'dddd, LL' }}</span><br/><br/>
+			<div class="introBit" [innerHTML] = "jsonInfocast.content"></div>
+		</li>
+	</ul>
 </div>

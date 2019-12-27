@@ -24,6 +24,11 @@ body{
     font-size: 16px;
 }
 
+div p{
+	@include firstLetter();
+	margin: 0px;
+}
+
 hr{
     background-color: $red;
     border: 1px solid $red;
@@ -57,7 +62,6 @@ ul{
 
 .mat-dialog-container{
     background: $modalBG;
-    border: 1px solid $border;
     padding: 25px 0px 10px 0px !important;
 }
 
