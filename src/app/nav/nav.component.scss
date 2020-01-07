@@ -35,7 +35,7 @@
 
 #disclaimerContainer{
 	padding: 10px;
-	width: 600px;
+	max-width: 600px;
 	img{
 			float: left;
 			width: 100px;
@@ -90,4 +90,32 @@
 	position: absolute;
 	top: 30px;
 	z-index: 9001;
+}
+
+@media all and (min-width: 360px) and (max-width: 800px){
+	#disclaimerContainer{
+	padding: 10px;
+	width: 80vw;
+	img{
+			float: left;
+			width: 100px;
+			padding-right: 15px;
+		}
+	}
+	
+	#infoBoxContainer{    
+		background-image: url('../../assets/img/bg_titleContainer.jpg');
+		background-repeat: no-repeat;
+		background-size: 100%;
+		border: 1px solid $red;
+		color: $textColor;
+		display: flex;
+		flex-direction: column;
+		height: 80vh;
+		justify-content: flex-end;
+		left: 10vw;
+		position: fixed;
+		top: 40px;
+		z-index: 9001;
+	}	
 }
