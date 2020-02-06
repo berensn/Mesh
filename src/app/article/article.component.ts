@@ -62,8 +62,8 @@ export class ArticleComponent implements OnInit {
   getArticles(): void {
     this.jsonService.getArticles(this._jsonUrl)
       .subscribe(data => {
-        this.jsonArticles = data['entries'],
-        console.log(this.jsonArticles);
+        this.jsonArticles = data['entries'];
+        if (this.log) console.log(this.jsonArticles);
       });
   }
 

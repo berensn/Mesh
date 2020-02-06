@@ -92,6 +92,17 @@
 	z-index: 9001;
 }
 
+#menuRoot:focus{
+	border: 1px solid $border;
+	border-radius: 50%;
+	left: 30px;
+	opacity: 1;
+	padding: -10px;
+	position: absolute;
+	top: 30px;
+	z-index: 9001;
+}
+
 @media all and (min-width: 360px) and (max-width: 800px){
 	#disclaimerContainer{
 	padding: 10px;

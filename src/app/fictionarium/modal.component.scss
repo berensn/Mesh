@@ -29,9 +29,9 @@ ul{
 
 .paginate{
     @include textFont();
-    margin:auto;
+    margin: auto;
     text-align: center;
-    width: 30%;
+    // width: 30%;
 }
 
 #modalContent{    
@@ -40,6 +40,7 @@ ul{
     columns: 2 39vw;
     column-gap: 40px;
     column-rule: 2px solid $firstLetter;
+		font-size: 1.1em;
     margin: auto;
     max-height: 90vh;
     max-width: 100vw;
@@ -49,4 +50,48 @@ ul{
 
 #pagination{
     list-style-type: none;
+}
+
+@media all and (min-width: 360px) and (max-width: 800px){
+	#modalContent{    
+		background-color: $modalBG;
+		color: $textColor;	
+    columns: initial;
+		font-size: 1.1em;
+		margin: auto;
+		max-height: 70vh;
+		max-width: 100vw;
+		padding: 10px 40px 10px 40px !important;
+		text-align: left;
+	}
+}
+
+@media all and (min-width: 801px) and (max-width: 1200px){
+	#modalContent{    
+		background-color: $modalBG;
+		color: $textColor;
+    columns: initial;
+		font-size: 1.1em;
+		margin: auto;
+		max-height: 70vh;
+		max-width: 100vw;
+		padding: 10px 40px 10px 40px !important;
+		text-align: left;
+	}
+}
+
+@media all and (min-width: 1201px) and (max-width: 1400px){
+	#modalContent{    
+		background-color: $modalBG;
+		color: $textColor;
+		columns: 2 39vw;
+		column-gap: 40px;
+		column-rule: 2px solid $firstLetter;
+		font-size: 1.1em;
+		margin: auto;
+		max-height: 90vh;
+		max-width: 100vw;
+		padding: 10px 40px 10px 40px !important;
+		text-align: left;
+	}
 }

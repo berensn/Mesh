@@ -22,7 +22,13 @@ export class FictionariumComponent implements OnInit {
   //private _jsonUrl: string = '../cockpit/api/collections/get/Content?token=33ea141ab00269a1e071e4ee66c1c1';
 
   // Constructors
-  constructor(private jsonService: JsonService, public dialog: MatDialog) { }
+  constructor(private _g: Globals, private jsonService: JsonService, public dialog: MatDialog) { }
+
+  // Formatting and on/off values for console.log
+  loc = this._g.loc;        // Location color
+  item = this._g.item;      // Item color
+  val = this._g.val;        // Value color
+  log = this._g.log;        // Logging on/off
 
   // Methods
   ngOnInit() {
@@ -37,8 +43,8 @@ export class FictionariumComponent implements OnInit {
   getArticles(): void {
     this.jsonService.getArticles(this._jsonUrl)
       .subscribe(data => {
-        this.jsonArticles = data['entries'],
-        console.log(this.jsonArticles);
+        this.jsonArticles = data['entries'];
+        if (this.log) console.log(this.jsonArticles);
       });
   }
 
